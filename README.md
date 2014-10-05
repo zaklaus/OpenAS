@@ -1,4 +1,4 @@
 Vortex
 ======
 
-OpenGL 3D Engine
+Open-Source Game Engine
