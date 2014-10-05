@@ -10,3 +10,8 @@ Game::~Game()
 {
 
 }
+
+void Game::dlltest()
+{
+	printf("Test from DLL");
+}

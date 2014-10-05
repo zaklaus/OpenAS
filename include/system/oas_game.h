@@ -8,6 +8,8 @@ class OAS_API Game
 public:
 	Game();
 	~Game();
+
+	void dlltest();
 };
 
 #endif

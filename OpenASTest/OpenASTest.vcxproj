@@ -69,6 +69,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>OpenASWin32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\VortexEngine\include\"
+xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -87,6 +92,11 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>OpenASWin32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\VortexEngine\include\"
+xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
