@@ -39,17 +39,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)\include\;$(IncludePath)</IncludePath>
-    <SourcePath>$(SolutionDir)\source\;$(SourcePath)</SourcePath>
+    <IncludePath>$(SolutionDir)\include\;$(SolutionDir)\include\sdks\SDL\;$(IncludePath)</IncludePath>
+    <SourcePath>$(SolutionDir)\source\sdks\SDL\;$(SolutionDir)\source\;$(SourcePath)</SourcePath>
     <OutDir>$(SolutionDir)\VortexEngineBuild\$(ProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\VortexEngineBuild\$(ProjectName)\$(Configuration)\</IntDir>
+    <LibraryPath>$(SolutionDir)\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)\include\;$(IncludePath)</IncludePath>
-    <SourcePath>$(SolutionDir)\source\;$(SourcePath)</SourcePath>
+    <IncludePath>$(SolutionDir)\include\;$(SolutionDir)\include\sdks\SDL\;$(IncludePath)</IncludePath>
+    <SourcePath>$(SolutionDir)\source\sdks\SDL\;$(SolutionDir)\source\;$(SourcePath)</SourcePath>
     <OutDir>$(SolutionDir)\VortexEngineBuild\$(ProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\VortexEngineBuild\$(ProjectName)\$(Configuration)\</IntDir>
+    <LibraryPath>$(SolutionDir)\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -58,10 +60,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;VORTEXWIN32_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "$(SolutionDir)\VortexEngineBuild\$(ProjectName)\$(Configuration)\$(TargetFileName)" "$(SolutionDir)\VortexTest\$(Configuration)\"
@@ -82,12 +86,14 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;VORTEXWIN32_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "$(SolutionDir)\VortexEngineBuild\$(ProjectName)\$(Configuration)\$(TargetFileName)" "$(SolutionDir)\VortexTest\$(Configuration)\"
@@ -100,11 +106,79 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
     </BuildLog>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\sdks\SDL\begin_code.h" />
+    <ClInclude Include="..\include\sdks\SDL\close_code.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_assert.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_atomic.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_audio.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_bits.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_blendmode.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_clipboard.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_config.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_cpuinfo.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_endian.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_error.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_events.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_filesystem.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_gamecontroller.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_gesture.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_haptic.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_hints.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_joystick.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_keyboard.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_keycode.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_loadso.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_log.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_main.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_messagebox.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_mouse.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_mutex.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_name.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_opengl.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_opengles.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_opengles2.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_pixels.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_platform.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_power.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_quit.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_rect.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_render.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_revision.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_rwops.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_scancode.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_shape.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_stdinc.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_surface.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_system.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_syswm.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_test.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_assert.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_common.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_compare.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_crc32.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_font.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_fuzzer.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_harness.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_images.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_log.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_md5.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_random.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_thread.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_timer.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_touch.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_types.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_version.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_video.h" />
     <ClInclude Include="..\include\system\vtx_game.h" />
+    <ClInclude Include="..\include\system\vtx_interfaces.h" />
     <ClInclude Include="..\include\system\vtx_platform.h" />
+    <ClInclude Include="..\include\system\vtx_sdl2application.h" />
+    <ClInclude Include="..\include\util\vtx_stringutil.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\system\vtx_game.cpp" />
+    <ClCompile Include="..\source\system\vtx_sdl2application.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

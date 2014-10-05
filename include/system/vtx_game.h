@@ -1,9 +1,9 @@
-#ifndef VTX_GAME
-#define VTX_GAME
+#ifndef VTX_GAME_H
+#define VTX_GAME_H
 
 #include <system\vtx_platform.h>
 
-class Game
+class VTX_API Game
 {
 public:
 	Game();

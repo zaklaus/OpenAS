@@ -19,6 +19,15 @@
     <Filter Include="Header Files\system">
       <UniqueIdentifier>{e6b3f567-8d24-4c52-8fc7-adbc972a4647}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\util">
+      <UniqueIdentifier>{87a29dc0-6201-418d-9600-a045c8e2b2e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sdks">
+      <UniqueIdentifier>{f37263dc-411e-4a48-860c-07ff0f0a26c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sdks\SDL">
+      <UniqueIdentifier>{c6807631-09a8-458a-b591-3c5d26358664}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\system\vtx_platform.h">
@@ -27,9 +36,213 @@
     <ClInclude Include="..\include\system\vtx_game.h">
       <Filter>Header Files\system</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\util\vtx_stringutil.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\vtx_interfaces.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\vtx_sdl2application.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\begin_code.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\close_code.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_assert.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_atomic.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_audio.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_bits.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_blendmode.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_clipboard.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_config.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_cpuinfo.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_endian.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_error.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_events.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_filesystem.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_gamecontroller.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_gesture.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_haptic.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_hints.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_joystick.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_keyboard.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_keycode.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_loadso.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_log.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_main.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_messagebox.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_mouse.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_mutex.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_name.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_opengl.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_opengles.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_opengles2.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_pixels.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_platform.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_power.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_quit.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_rect.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_render.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_revision.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_rwops.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_scancode.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_shape.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_stdinc.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_surface.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_system.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_syswm.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_test.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_assert.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_common.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_compare.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_crc32.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_font.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_fuzzer.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_harness.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_images.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_log.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_md5.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_test_random.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_thread.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_timer.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_touch.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_types.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_version.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_video.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\system\vtx_game.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\vtx_sdl2application.cpp">
       <Filter>Source Files\system</Filter>
     </ClCompile>
   </ItemGroup>
