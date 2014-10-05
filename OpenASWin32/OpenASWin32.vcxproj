@@ -14,6 +14,7 @@
     <ProjectGuid>{594A392B-CB49-4C68-AA9F-D2160F1804ED}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>VortexWin32</RootNamespace>
+    <ProjectName>OpenASWin32</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -41,16 +42,16 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(SolutionDir)\include\;$(SolutionDir)\include\sdks\SDL\;$(IncludePath)</IncludePath>
     <SourcePath>$(SolutionDir)\source\sdks\SDL\;$(SolutionDir)\source\;$(SourcePath)</SourcePath>
-    <OutDir>$(SolutionDir)\VortexEngineBuild\$(ProjectName)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)\VortexEngineBuild\$(ProjectName)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\</IntDir>
     <LibraryPath>$(SolutionDir)\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(SolutionDir)\include\;$(SolutionDir)\include\sdks\SDL\;$(IncludePath)</IncludePath>
     <SourcePath>$(SolutionDir)\source\sdks\SDL\;$(SolutionDir)\source\;$(SourcePath)</SourcePath>
-    <OutDir>$(SolutionDir)\VortexEngineBuild\$(ProjectName)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)\VortexEngineBuild\$(ProjectName)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\</IntDir>
     <LibraryPath>$(SolutionDir)\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -68,13 +69,13 @@
       <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y "$(SolutionDir)\VortexEngineBuild\$(ProjectName)\$(Configuration)\$(TargetFileName)" "$(SolutionDir)\VortexTest\$(Configuration)\"
+      <Command>xcopy /y "$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\$(TargetFileName)" "$(SolutionDir)\OpenASTest\$(Configuration)\"
 xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\VortexEngine\include\"
 xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
 </Command>
     </PostBuildEvent>
     <BuildLog>
-      <Path>$(SolutionDir)\VortexEngineBuild\$(MSBuildProjectName).log</Path>
+      <Path>$(SolutionDir)\OpenASBuild\$(MSBuildProjectName).log</Path>
     </BuildLog>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -96,13 +97,13 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
       <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y "$(SolutionDir)\VortexEngineBuild\$(ProjectName)\$(Configuration)\$(TargetFileName)" "$(SolutionDir)\VortexTest\$(Configuration)\"
+      <Command>xcopy /y "$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\$(TargetFileName)" "$(SolutionDir)\OpenASTest\$(Configuration)\"
 xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\VortexEngine\include\"
 xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
 </Command>
     </PostBuildEvent>
     <BuildLog>
-      <Path>$(SolutionDir)\VortexEngineBuild\$(MSBuildProjectName).log</Path>
+      <Path>$(SolutionDir)\OpenASBuild\$(MSBuildProjectName).log</Path>
     </BuildLog>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -170,15 +171,15 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
     <ClInclude Include="..\include\sdks\SDL\SDL_types.h" />
     <ClInclude Include="..\include\sdks\SDL\SDL_version.h" />
     <ClInclude Include="..\include\sdks\SDL\SDL_video.h" />
-    <ClInclude Include="..\include\system\vtx_game.h" />
-    <ClInclude Include="..\include\system\vtx_interfaces.h" />
-    <ClInclude Include="..\include\system\vtx_platform.h" />
-    <ClInclude Include="..\include\system\vtx_sdl2application.h" />
-    <ClInclude Include="..\include\util\vtx_stringutil.h" />
+    <ClInclude Include="..\include\system\oas_game.h" />
+    <ClInclude Include="..\include\system\oas_interfaces.h" />
+    <ClInclude Include="..\include\system\oas_platform.h" />
+    <ClInclude Include="..\include\system\oas_sdl2application.h" />
+    <ClInclude Include="..\include\util\oas_stringutil.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\source\system\vtx_game.cpp" />
-    <ClCompile Include="..\source\system\vtx_sdl2application.cpp" />
+    <ClCompile Include="..\source\system\oas_game.cpp" />
+    <ClCompile Include="..\source\system\oas_sdl2application.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

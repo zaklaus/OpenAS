@@ -1,16 +1,16 @@
-#ifndef VTX_SDL2_APPLICATION_H
-#define VTX_SDL2_APPLICATION_H
+#ifndef OAS_SDL2_APPLICATION_H
+#define OAS_SDL2_APPLICATION_H
 
-#include <system\vtx_platform.h>
-#include <system\vtx_interfaces.h>
-#include <util\vtx_stringutil.h>
+#include <system\oas_platform.h>
+#include <system\oas_interfaces.h>
+#include <util\oas_stringutil.h>
 #include <SDL.h>
 
-namespace Vortex {
+namespace OpenAS {
 
 	namespace System {
 
-		class VTX_API SDLApplication : public IApplication
+		class OAS_API SDLApplication : public IApplication
 		{
 		public:
 			SDLApplication(const std::string& title);

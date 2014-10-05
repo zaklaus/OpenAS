@@ -30,21 +30,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\include\system\vtx_platform.h">
-      <Filter>Header Files\system</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\system\vtx_game.h">
-      <Filter>Header Files\system</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\util\vtx_stringutil.h">
-      <Filter>Header Files\util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\system\vtx_interfaces.h">
-      <Filter>Header Files\system</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\system\vtx_sdl2application.h">
-      <Filter>Header Files\system</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\sdks\SDL\begin_code.h">
       <Filter>Header Files\sdks\SDL</Filter>
     </ClInclude>
@@ -237,12 +222,27 @@
     <ClInclude Include="..\include\sdks\SDL\SDL_video.h">
       <Filter>Header Files\sdks\SDL</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\system\oas_game.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\oas_interfaces.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\oas_platform.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\oas_sdl2application.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\util\oas_stringutil.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\source\system\vtx_game.cpp">
+    <ClCompile Include="..\source\system\oas_game.cpp">
       <Filter>Source Files\system</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\system\vtx_sdl2application.cpp">
+    <ClCompile Include="..\source\system\oas_sdl2application.cpp">
       <Filter>Source Files\system</Filter>
     </ClCompile>
   </ItemGroup>

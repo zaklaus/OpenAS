@@ -1,6 +1,6 @@
-#include <system\vtx_sdl2application.h>
+#include <system\oas_sdl2application.h>
 
-namespace Vortex {
+namespace OpenAS {
 
 	namespace System {
 

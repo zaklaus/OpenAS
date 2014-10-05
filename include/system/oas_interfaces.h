@@ -1,13 +1,13 @@
-#ifndef VTX_INTERFACES_H
-#define VTX_INTERFACES_H
+#ifndef OAS_INTERFACES_H
+#define OAS_INTERFACES_H
 
-#include<system\vtx_platform.h>
+#include<system\oas_platform.h>
 
-namespace Vortex {
+namespace OpenAS {
 
 	namespace System {
 
-		class VTX_API IApplication
+		class OAS_API IApplication
 		{
 		public:
 			virtual ~IApplication(){}
