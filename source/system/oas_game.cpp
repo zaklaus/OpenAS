@@ -1,9 +1,10 @@
 #include <system/oas_game.h>
 
 
-Game::Game()
+Game::Game(const std::string& title)
 {
-
+	m_title = title;
+	m_cSDLApplication = new OpenAS::System::SDLApplication(title);
 }
 
 Game::~Game()
@@ -18,6 +19,13 @@ OpenAS::System::LogManager* Game::GetLogManager()
 	return &this->m_cLogManager;
 }
 
+OpenAS::System::SDLApplication* Game::GetSDLApplication()
+{
+	return this->m_cSDLApplication;
+}
+
+// Test code
+//
 void Game::dlltest()
 {
 	printf("Hello, DLL World!\n");

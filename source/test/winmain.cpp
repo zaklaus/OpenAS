@@ -28,8 +28,9 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	// Test code
 	//
-	Game* g = new Game();
+	Game* g = new Game("OpenAS Test Window");
 	g->dlltest();
-	system("pause");
+	g->GetSDLApplication()->run();
+	system("pause>nul");
 	return 0;
 }

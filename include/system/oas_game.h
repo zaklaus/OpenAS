@@ -9,19 +9,23 @@ class OAS_API Game
 {
 private:
 	OpenAS::System::LogManager m_cLogManager;
-
+	OpenAS::System::SDLApplication* m_cSDLApplication;
 public:
-	Game();
+	Game(const std::string& title);
 	~Game();
 
 
 	// Member methods
 	//
 	OpenAS::System::LogManager* GetLogManager();
+	OpenAS::System::SDLApplication* GetSDLApplication();
 
 	// Test methods
 	//
 	void dlltest();
+
+private:
+	std::string m_title;
 };
 
 #endif
