@@ -173,12 +173,16 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
     <ClInclude Include="..\include\sdks\SDL\SDL_video.h" />
     <ClInclude Include="..\include\system\oas_game.h" />
     <ClInclude Include="..\include\system\oas_interfaces.h" />
+    <ClInclude Include="..\include\system\oas_logmanager.h" />
     <ClInclude Include="..\include\system\oas_platform.h" />
     <ClInclude Include="..\include\system\oas_sdl2application.h" />
+    <ClInclude Include="..\include\util\oas_ioutil.h" />
     <ClInclude Include="..\include\util\oas_stringutil.h" />
+    <ClInclude Include="..\include\util\oas_timeutil.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\system\oas_game.cpp" />
+    <ClCompile Include="..\source\system\oas_logmanager.cpp" />
     <ClCompile Include="..\source\system\oas_sdl2application.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

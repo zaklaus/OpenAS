@@ -237,12 +237,24 @@
     <ClInclude Include="..\include\util\oas_stringutil.h">
       <Filter>Header Files\util</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\system\oas_logmanager.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\util\oas_ioutil.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\util\oas_timeutil.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\system\oas_game.cpp">
       <Filter>Source Files\system</Filter>
     </ClCompile>
     <ClCompile Include="..\source\system\oas_sdl2application.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\oas_logmanager.cpp">
       <Filter>Source Files\system</Filter>
     </ClCompile>
   </ItemGroup>
