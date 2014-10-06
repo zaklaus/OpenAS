@@ -10,8 +10,8 @@ void OpenAS::System::LogManager::AddLog(std::string title,std::string msg,const 
 {
 	// Prepare our log
 	//
-	std::string time = OpenAS::Util::TStoDT(ts);
-	std::string log = std::string("Log: ["+time+"] "+title+": "+msg+"\n");
+	std::string szTime = OpenAS::Util::TStoDT(ts);
+	std::string log = std::string("Log: ["+szTime+"] "+title+": "+msg+"\n");
 	
 	// Write log to file
 	//
@@ -21,7 +21,7 @@ void OpenAS::System::LogManager::AddLog(std::string title,std::string msg,const 
 		//
 		if(cmd > 0)
 		{
-			this->AddLog("WriteFileERR","Could not write to file.",ts);
+			this->AddLog("WriteFileERR","Could not write to file.",time(NULL));
 		}
 	}
 
@@ -39,8 +39,8 @@ void OpenAS::System::LogManager::AddLog(std::string title,std::string msg,const 
 {
 	// Prepare our log
 	//
-	std::string time = OpenAS::Util::TStoDT(ts);
-	std::string log = std::string("Log: ["+time+"] "+title+": "+msg);
+	std::string szTime = OpenAS::Util::TStoDT(ts);
+	std::string log = std::string("Log: ["+szTime+"] "+title+": "+msg);
 
 	// Write to console
 	//

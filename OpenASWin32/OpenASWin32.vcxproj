@@ -70,8 +70,8 @@
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\$(TargetFileName)" "$(SolutionDir)\OpenASTest\$(Configuration)\"
-xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\VortexEngine\include\"
-xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
+xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\OpenAS\include\"
+xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
 </Command>
     </PostBuildEvent>
     <BuildLog>
@@ -98,8 +98,8 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\$(TargetFileName)" "$(SolutionDir)\OpenASTest\$(Configuration)\"
-xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\VortexEngine\include\"
-xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
+xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\OpenAS\include\"
+xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
 </Command>
     </PostBuildEvent>
     <BuildLog>

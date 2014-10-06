@@ -71,8 +71,8 @@
       <AdditionalLibraryDirectories>$(SolutionDir)\OpenASBuild\OpenASWin32\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\VortexEngine\include\"
-xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
+      <Command>xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\OpenAS\include\"
+xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -96,8 +96,8 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
       <AdditionalLibraryDirectories>$(SolutionDir)\OpenASBuild\OpenASWin32\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\VortexEngine\include\"
-xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\VortexEngine\source\"
+      <Command>xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\OpenAS\include\"
+xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
