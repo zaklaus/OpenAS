@@ -73,6 +73,7 @@
     <PostBuildEvent>
       <Command>xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\OpenAS\include\"
 xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
+xcopy /y "$(SolutionDir)\lib\SDL2.dll" "$(SolutionDir)\$(ProjectName)\$(Configuration)\"
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -98,6 +99,7 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
     <PostBuildEvent>
       <Command>xcopy /s /y "$(SolutionDir)\include" "C:\GitHub\OpenAS\include\"
 xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
+xcopy /y "$(SolutionDir)\lib\SDL2.dll" "$(SolutionDir)\$(ProjectName)\$(Configuration)\"
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
