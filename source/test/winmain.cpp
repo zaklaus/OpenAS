@@ -31,6 +31,8 @@
 
 #include<system\oas_game.h>
 
+using namespace OpenAS::System;
+
 int WINAPI WinMain(HINSTANCE hInstance,
 	HINSTANCE hPrevInstance,
 	LPSTR lpCmdLine,
@@ -54,9 +56,22 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	// Test code
 	//
-	Game* g = new Game("OpenAS Test Window");
-	g->dlltest();
-	g->GetSDLApplication()->run();
+	Game g = Game("OpenAS Test Window");
+	//g.dlltest();
+
+
+	if(g.GetEntityManager()->CreateEntity("Player","playerscript",OpenAS::Util::Vector3D(0.0f,0.0f,0.0f),OpenAS::Util::Vector3D(0.0f,.0f,.0f),"PlayerModel")==-1){
+		printf("ah");
+	}
+	g.GetEntityManager()->CreateEntity("Auto","",OpenAS::Util::Vector3D(0.0f,0.0f,5.0f),OpenAS::Util::Vector3D(0.0f,.0f,.0f),"AutoModel");
+	g.GetEntityManager()->CreateEntity("Enemy","",OpenAS::Util::Vector3D(0.0f,0.0f,5.0f),OpenAS::Util::Vector3D(0.0f,.0f,.0f),"EnemyModel");
+
+	g.GetEntityManager()->DestroyEntity(g.GetEntityManager()->GetEntityByName("Auto")->GetID());
+
+	//std::cout <<  g.GetEntityManager()->GetEntityCount();
+
+	//g.GetLogManager()->AddLog("TestEntity",g.GetEntityManager()->GetEntityByName("Enemy")->GetEntityName(),time(NULL),1,"entity.txt");
+
 	system("pause>nul");
 	return 0;
 }

@@ -49,7 +49,7 @@
 
 #ifndef OAS_STATIC_BUILD
 	#ifdef OAS_SYS_WINDOWS
-		#ifndef OAS_NONCLIENT_BUILD
+		#ifdef OAS_NONCLIENT_BUILD
 			#define OAS_API __declspec(dllexport)
 		#else
 			#define OAS_API __declspec(dllimport)

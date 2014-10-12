@@ -27,33 +27,45 @@
 #include <system/oas_game.h>
 
 
-Game::Game(const std::string& title)
+OpenAS::System::Game::Game(const std::string& title)
 {
 	m_title = title;
 	m_cSDLApplication = new OpenAS::System::SDLApplication(title);
 }
 
-Game::~Game()
+OpenAS::System::Game::~Game()
 {
 
 }
 
 // Get member methods
 //
-OpenAS::System::LogManager* Game::GetLogManager()
+OpenAS::System::LogManager* OpenAS::System::Game::GetLogManager()
 {
 	return &this->m_cLogManager;
 }
 
-OpenAS::System::SDLApplication* Game::GetSDLApplication()
+OpenAS::System::SDLApplication* OpenAS::System::Game::GetSDLApplication()
 {
 	return this->m_cSDLApplication;
 }
 
+OpenAS::System::EntityManager* OpenAS::System::Game::GetEntityManager()
+{
+	return &this->m_cEntityManager;
+}
+
+OpenAS::System::ScriptsEx* OpenAS::System::Game::GetScriptsManager()
+{
+	return &this->m_cScripts;
+}
+
 // Test code
 //
-void Game::dlltest()
+void OpenAS::System::Game::dlltest()
 {
 	printf("Hello, DLL World!\n");
 	this->GetLogManager()->AddLog("TestMethod","Testing DLL Log Manager",time(NULL),1,"test.txt");
+	this->GetLogManager()->AddLog("TestMethod","No Chance finding this line in test.txt",time(NULL));
+	this->GetLogManager()->AddLog("TestMethod","Yet Another Test Message",time(NULL),1,"test.txt");
 }

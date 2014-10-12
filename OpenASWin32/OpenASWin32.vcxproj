@@ -20,13 +20,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -41,7 +41,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(SolutionDir)\include\;$(SolutionDir)\include\sdks\SDL\;$(IncludePath)</IncludePath>
-    <SourcePath>$(SolutionDir)\source\sdks\SDL\;$(SolutionDir)\source\;$(SourcePath)</SourcePath>
+    <SourcePath>$(SolutionDir)\source\sdks\SDL\;$(SolutionDir)\source\;$(SolutionDir)\sdks\SQUIRREL3\squirrel;$(SourcePath)</SourcePath>
     <OutDir>$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\</IntDir>
     <LibraryPath>$(SolutionDir)\lib\;$(LibraryPath)</LibraryPath>
@@ -49,7 +49,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(SolutionDir)\include\;$(SolutionDir)\include\sdks\SDL\;$(IncludePath)</IncludePath>
-    <SourcePath>$(SolutionDir)\source\sdks\SDL\;$(SolutionDir)\source\;$(SourcePath)</SourcePath>
+    <SourcePath>$(SolutionDir)\source\sdks\SDL\;$(SolutionDir)\source\;$(SolutionDir)\sdks\SQUIRREL3\squirrel;$(SourcePath)</SourcePath>
     <OutDir>$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\</IntDir>
     <LibraryPath>$(SolutionDir)\lib\;$(LibraryPath)</LibraryPath>
@@ -60,8 +60,9 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;VORTEXWIN32_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;OAS_NONCLIENT_BUILD;_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;_USRDLL;VORTEXWIN32_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\sdks\SQUIRREL3\include\;$(SolutionDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -86,8 +87,9 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;VORTEXWIN32_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;OAS_NONCLIENT_BUILD;_CRT_SECURE_NO_WARNINGS;NDEBUG;_WINDOWS;_USRDLL;VORTEXWIN32_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\sdks\SQUIRREL3\include\;$(SolutionDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -171,19 +173,76 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
     <ClInclude Include="..\include\sdks\SDL\SDL_types.h" />
     <ClInclude Include="..\include\sdks\SDL\SDL_version.h" />
     <ClInclude Include="..\include\sdks\SDL\SDL_video.h" />
+    <ClInclude Include="..\include\system\oas_entity.h" />
+    <ClInclude Include="..\include\system\oas_entitymanager.h" />
     <ClInclude Include="..\include\system\oas_game.h" />
     <ClInclude Include="..\include\system\oas_interfaces.h" />
     <ClInclude Include="..\include\system\oas_logmanager.h" />
     <ClInclude Include="..\include\system\oas_platform.h" />
+    <ClInclude Include="..\include\system\oas_script.h" />
+    <ClInclude Include="..\include\system\oas_scripts.h" />
+    <ClInclude Include="..\include\system\oas_scriptsex.h" />
     <ClInclude Include="..\include\system\oas_sdl2application.h" />
     <ClInclude Include="..\include\util\oas_ioutil.h" />
+    <ClInclude Include="..\include\util\oas_math.h" />
     <ClInclude Include="..\include\util\oas_stringutil.h" />
     <ClInclude Include="..\include\util\oas_timeutil.h" />
+    <ClInclude Include="..\include\util\sq_funcdef.h" />
+    <ClInclude Include="..\include\util\sq_functions.h" />
+    <ClInclude Include="..\include\util\sq_heads.h" />
+    <ClInclude Include="..\include\util\sq_utils.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\sqstdlib\sqstdblobimpl.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\sqstdlib\sqstdstream.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqarray.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqclass.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqclosure.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqcompiler.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqfuncproto.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqfuncstate.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqlexer.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqobject.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqopcodes.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqpcheader.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqstate.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqstring.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqtable.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\squserdata.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\squtils.h" />
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqvm.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdaux.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdblob.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdio.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdmath.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdrex.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdstream.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdstring.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdsystem.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqapi.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqbaselib.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqclass.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqcompiler.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqdebug.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqfuncstate.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqlexer.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqmem.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqobject.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqstate.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqtable.cpp" />
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqvm.cpp" />
+    <ClCompile Include="..\source\system\oas_entity.cpp" />
+    <ClCompile Include="..\source\system\oas_entitymanager.cpp" />
     <ClCompile Include="..\source\system\oas_game.cpp" />
     <ClCompile Include="..\source\system\oas_logmanager.cpp" />
+    <ClCompile Include="..\source\system\oas_script.cpp" />
+    <ClCompile Include="..\source\system\oas_scriptex.cpp" />
+    <ClCompile Include="..\source\system\oas_scripts.cpp" />
     <ClCompile Include="..\source\system\oas_sdl2application.cpp" />
+    <ClCompile Include="..\source\util\oas_math.cpp" />
+    <ClCompile Include="..\source\util\sq_funcdef.cpp" />
+    <ClCompile Include="..\source\util\sq_functions.cpp" />
+    <ClCompile Include="..\source\util\sq_utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

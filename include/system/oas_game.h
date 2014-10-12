@@ -23,6 +23,7 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 	SOFTWARE.
 */
+#pragma once
 
 #ifndef OAS_GAME_H
 #define OAS_GAME_H
@@ -30,28 +31,41 @@
 #include <system\oas_platform.h>
 #include <system\oas_sdl2application.h>
 #include <system\oas_logmanager.h>
+#include <system\oas_entitymanager.h>
+#include <system\oas_scriptsex.h>
 
-class OAS_API Game
+namespace OpenAS
 {
-private:
-	OpenAS::System::LogManager m_cLogManager;
-	OpenAS::System::SDLApplication* m_cSDLApplication;
-public:
-	Game(const std::string& title);
-	~Game();
+	namespace System
+	{
+		
+
+		static class OAS_API Game
+		{
+		private:
+			OpenAS::System::LogManager m_cLogManager;
+			OpenAS::System::SDLApplication* m_cSDLApplication;
+			OpenAS::System::EntityManager m_cEntityManager;
+			OpenAS::System::ScriptsEx m_cScripts;
+		public:
+			Game(const std::string& title);
+			~Game();
 
 
-	// Member methods
-	//
-	OpenAS::System::LogManager* GetLogManager();
-	OpenAS::System::SDLApplication* GetSDLApplication();
+			// Member methods
+			//
+			OpenAS::System::LogManager* GetLogManager();
+			OpenAS::System::SDLApplication* GetSDLApplication();
+			OpenAS::System::EntityManager* GetEntityManager();
+			OpenAS::System::ScriptsEx* GetScriptsManager();
 
-	// Test methods
-	//
-	void dlltest();
+			// Test methods
+			//
+			void dlltest();
 
-private:
-	std::string m_title;
-};
-
+		private:
+			std::string m_title;
+		};
+	}
+}
 #endif

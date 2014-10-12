@@ -22,13 +22,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -44,7 +44,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\OpenASTest\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\OpenASTest\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)\include\;$(SolutionDir)\include\sdks\SDL\;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\include\;$(SolutionDir)\include\sdks\SDL\;$(SolutionDir)\sdks\SQUIRREL3\include\;$(IncludePath)</IncludePath>
     <SourcePath>$(SolutionDir)\source\sdks\SDL\;$(SolutionDir)\source\;$(SourcePath)</SourcePath>
     <LibraryPath>$(SolutionDir)\lib\;$(SolutionDir)\OpenASBuild\OpenASWin32\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -52,7 +52,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\OpenASTest\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\OpenASTest\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)\include\;$(SolutionDir)\include\sdks\SDL\;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\include\;$(SolutionDir)\include\sdks\SDL\;$(SolutionDir)\sdks\SQUIRREL3\include\;$(IncludePath)</IncludePath>
     <SourcePath>$(SolutionDir)\source\sdks\SDL\;$(SolutionDir)\source\;$(SourcePath)</SourcePath>
     <LibraryPath>$(SolutionDir)\lib\;$(SolutionDir)\OpenASBuild\OpenASWin32\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>

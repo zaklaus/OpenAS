@@ -28,6 +28,12 @@
     <Filter Include="Header Files\sdks\SDL">
       <UniqueIdentifier>{c6807631-09a8-458a-b591-3c5d26358664}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\util">
+      <UniqueIdentifier>{971c851f-ccdd-4ead-bc45-0f1b7b1ffbf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sq">
+      <UniqueIdentifier>{41274ba9-8662-4423-8a6d-e54dc8dba05b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\sdks\SDL\begin_code.h">
@@ -246,6 +252,90 @@
     <ClInclude Include="..\include\util\oas_timeutil.h">
       <Filter>Header Files\util</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\util\oas_math.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\oas_entity.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\oas_entitymanager.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\util\sq_utils.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\util\sq_heads.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\util\sq_functions.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\util\sq_funcdef.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\oas_script.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\oas_scripts.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqarray.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqclass.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqclosure.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqcompiler.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqfuncproto.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqfuncstate.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqlexer.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqobject.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqopcodes.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqpcheader.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqstate.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqstring.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqtable.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\squserdata.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\squtils.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\squirrel\sqvm.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\sqstdlib\sqstdblobimpl.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdks\SQUIRREL3\sqstdlib\sqstdstream.h">
+      <Filter>Source Files\sq</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\oas_scriptsex.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\system\oas_game.cpp">
@@ -255,6 +345,93 @@
       <Filter>Source Files\system</Filter>
     </ClCompile>
     <ClCompile Include="..\source\system\oas_logmanager.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\oas_entity.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\oas_entitymanager.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\util\oas_math.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\util\sq_funcdef.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\util\sq_functions.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\util\sq_utils.cpp">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\oas_script.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\oas_scripts.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqapi.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqbaselib.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqclass.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqcompiler.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqdebug.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqfuncstate.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqlexer.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqmem.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqobject.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqstate.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqtable.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqvm.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdaux.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdblob.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdio.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdmath.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdrex.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdstream.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdstring.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdks\SQUIRREL3\sqstdlib\sqstdsystem.cpp">
+      <Filter>Source Files\sq</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\oas_scriptex.cpp">
       <Filter>Source Files\system</Filter>
     </ClCompile>
   </ItemGroup>
