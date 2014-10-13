@@ -27,6 +27,7 @@
 #include <system\oas_script.h>
 #include <util\sq_heads.h>
 #include <system\oas_game.h>
+//#include <system\oas_logmanager.h>
 
 using namespace OpenAS::System;
 
@@ -39,7 +40,10 @@ void printfunc(SQVM * pVM, const char * szFormat, ...)
 	va_start(vl, szFormat);
 	vsprintf(szBuffer, szFormat, vl);
 	va_end(vl);
-	g->GetLogManager()->AddLog("SQ3",szBuffer,time(NULL),1,"sq_log.txt");
+	g->GetLogManager()->AddLog("ERR_SQ_PRINT",szBuffer,time(NULL),1,"openlog.txt");
+//	std::stringstream ss;
+//	ss << szBuffer;
+//	g->GetLogManager()->AddErrorLog("ERR_SQ_PRINT",ss.str(),time(NULL),g->GetLogManager()->GetDebugFlag(),LOG_FILE);
 }
 
 Script::Script(const char *szScriptName)
@@ -50,9 +54,14 @@ Script::Script(const char *szScriptName)
 
 	// make sure the script exists
 	FILE * fp = fopen(szScriptPath, "rb");
-
+	//g->GetLogManager()->AddErrorLog("ERR_FILE_NOT_FOUND",szScriptPath,time(NULL),g->GetLogManager()->GetDebugFlag(),LOG_FILE);
 	if (!fp) {
-		// script does not exist
+		std::stringstream ss;
+		ss << "File not found ["<<szScriptPath<<"]";
+		g->GetLogManager()->AddLog("ERR_FILE_NOT_FOUND",ss.str(),time(NULL),1,"openlog.txt");
+
+		this->m_pVM = NULL;
+
 		return;
 	}
 
@@ -107,7 +116,16 @@ Script::Script(const char *szScriptName)
 	// load and compile the script
 	if (SQ_FAILED(sqstd_dofile(pVM, szScriptPath, SQFalse, SQTrue))) {
 		// script compilation failed
-		g->GetLogManager()->AddLog("SQErr","Error parsing file occured",time(NULL));
+		std::stringstream ss;
+		ss << "Syntax/Runtime error occured ["<<szScriptPath<<"]";
+		g->GetLogManager()->AddLog("ERR_SQ_ERROR",ss.str(),time(NULL),1,"openlog.txt");
+		//g->GetLogManager()->AddLog("ERROR_SQ_ERROR","Error parsing file occured",time(NULL));
+//		std::stringstream ss;
+//		ss << szScriptPath;
+//		g->GetLogManager()->AddErrorLog("ERR_SQ_ERROR",ss.str(),time(NULL),g->GetLogManager()->GetDebugFlag(),LOG_FILE);
+		sq_close(pVM);
+		this->m_pVM = NULL;
+		//delete this;
 		return;
 	}
 

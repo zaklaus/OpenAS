@@ -48,9 +48,12 @@ OpenAS::System::Entity::Entity(int _id, const char* _szEntityName, const char* _
 
 		//this->SetScriptID(sid);
 		//g->GetScriptsManager()->Call(sid,"onStart",0,NULL);
-
-		this->scr = new Script(tmp);
-		g->GetScriptsManager()->Call(scr,"onStart",0,NULL);
+		Script* tmpz = new Script(tmp);
+		if(tmpz->GetVM() != NULL)
+		{
+			this->scr = tmpz;
+			g->GetScriptsManager()->Call(scr,"onStart",0,NULL);
+		}
 	}
 }
 

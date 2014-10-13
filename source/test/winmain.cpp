@@ -71,7 +71,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	//std::cout <<  g.GetEntityManager()->GetEntityCount();
 
 	//g.GetLogManager()->AddLog("TestEntity",g.GetEntityManager()->GetEntityByName("Enemy")->GetEntityName(),time(NULL),1,"entity.txt");
-
+	//g.GetLogManager()->AddErrorLog("ERR_SUCCESS","",time(NULL),1,"openlog.txt");
 	system("pause>nul");
 	return 0;
 }

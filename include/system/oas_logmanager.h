@@ -23,7 +23,7 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 	SOFTWARE.
 */
-
+#pragma once
 #ifndef OAS_LOGMANAGER_H
 #define OAS_LOGMANAGER_H
 
@@ -32,17 +32,34 @@
 #include <util\oas_ioutil.h>
 #include <util\oas_timeutil.h>
 
+#define LOG_FILE "openlog.txt"
+#define DEFAULT_DEBUG_FLAG 1
+#define LOG(p,q) AddLog(p,q,time(NULL),1,LOG_FILE)
+
 
 namespace OpenAS {
 	namespace System {
+
+		
+
 		class OAS_API LogManager
 		{
+		private:
+			bool bDebugCmd;
+			
+
 		public:
 			LogManager();
 			~LogManager();
 
 			void AddLog(std::string title,std::string msg,const time_t ts,int cmd,std::string filename);
+			void AddErrorLog(std::string err, std::string msg,const time_t ts,int cmd,std::string filename);
+			void AddErrorLog(std::string err, std::string msg,const time_t ts);
 			void AddLog(std::string title,std::string msg,const time_t ts);
+			bool GetDebugFlag(){ return bDebugCmd; };
+			void SetDebugFlag(bool _bDebugCmd){ bDebugCmd = _bDebugCmd; };
+			//char** GetError(const char* err){ /*return err_msg[errno];*/ for(int i = 0; i < sizeof(err_str); i++) {if(!strcmp(err_str[i],err)){ return (char**){err_str[i],err_msg[i]}; }} return (char**){"",""}; };
+			
 		};
 	}
 }

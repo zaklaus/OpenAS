@@ -26,8 +26,24 @@
 
 #include <system\oas_logmanager.h>
 
-OpenAS::System::LogManager::LogManager(){}
+OpenAS::System::LogManager::LogManager(){ bDebugCmd = DEFAULT_DEBUG_FLAG; }
 OpenAS::System::LogManager::~LogManager(){}
+
+using namespace OpenAS::System;
+
+char* err_str[] =
+{
+	"ERR_SUCCESS",
+	"ERR_LIMITS",
+	"ERR_FILE_NOT_FOUND",
+	"ERR_UNKNOWN", 
+	"ERR_SQ_ERROR",
+	"ERR_SQ_PRINT"
+};
+
+char* err_msg[] = 
+{"Done.","Inssuficient space.","File not found.","Unknown error.","SQuirrel syntax/script error.","SQ"};
+
 
 
 // Adds log to file
@@ -71,4 +87,45 @@ void OpenAS::System::LogManager::AddLog(std::string title,std::string msg,const 
 	// Write to console
 	//
 	std::cout << log << std::endl;
+}
+
+void LogManager::AddErrorLog(std::string err, std::string msg,const time_t ts,int cmd,std::string filename)
+{
+	std::string title, errstr;
+
+	for(int i = 0; i < sizeof(*err_str); i++)
+	{
+		if(!strcmp(err_str[i],err.c_str()))
+		{
+			title = err;
+			std::stringstream ss;
+			ss << err_msg[i]<<"["<<msg<<"]";
+			errstr = ss.str();
+			break;
+		}
+	}
+
+	if(title == "") return;
+
+	this->AddLog(title,errstr,ts,cmd,filename);
+}
+void LogManager::AddErrorLog(std::string err, std::string msg,const time_t ts)
+{
+	std::string title, errstr;
+
+	for(int i = 0; i < sizeof(*err_str); i++)
+	{
+		if(!strcmp(err_str[i],err.c_str()))
+		{
+			title = err;
+			std::stringstream ss;
+			ss << err_msg[i]<<"["<<msg<<"]";
+			errstr = ss.str();
+			break;
+		}
+	}
+
+	if(title == "") return;
+
+	this->AddLog(title,errstr,ts);
 }

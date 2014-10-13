@@ -25,6 +25,10 @@
 */
 
 #include <system\oas_entitymanager.h>
+#include <system\oas_game.h>
+
+extern Game* g;
+
 
 OpenAS::System::EntityManager::EntityManager()
 {
@@ -41,7 +45,7 @@ OpenAS::System::EntityManager::~EntityManager()
 
 int OpenAS::System::EntityManager::CreateEntity(const char* _szEntityName, const char* _szScriptName, OpenAS::Util::Vector3D _vPosition, OpenAS::Util::Vector3D _vRotation, const char* _szModelName)
 {
-	// find a free script slot
+	// find a free entity slot
 	int iSlot = -1;
 
 	for (int i = 0; i < MAX_ENTITIES; i++) {
@@ -53,8 +57,8 @@ int OpenAS::System::EntityManager::CreateEntity(const char* _szEntityName, const
 	}
 
 	if (iSlot == -1) {
-		printf("no slot");
-		// no free script slot found
+		g->GetLogManager()->AddErrorLog("ERR_LIMITS","entitycount",time(NULL),g->GetLogManager()->GetDebugFlag(),LOG_FILE);
+		// no free entity slot found
 		return -1;
 	}
 
