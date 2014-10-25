@@ -73,15 +73,17 @@ void Map::LoadThisMap()
 	std::string line;
 	while (std::getline(fp, line))
 	{
+		
 		std::istringstream iss(line);
 		std::string null, tmp;
-
+		
 		if ((iss >> null >> tmp))
 		{
 			if (null == "CreateEntity")
 			{
-
-				int c = Parser::CreateMapEntity(tmp);
+				int start = line.find(" ");
+				std::string args = line.substr(start+1, line.length()-1);
+				int c = Parser::CreateMapEntity(args);
 
 				if (c == -1)
 					g->GetLogManager()->AddErrorLog("ERR_OMAP_SYNTAX", this->m_szMapFileName, time(NULL), 1, LOG_FILE);

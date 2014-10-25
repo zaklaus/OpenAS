@@ -40,12 +40,12 @@ int OpenAS::Parser::CreateMapEntity(std::string tmp)
 	char str[128] = "";
 	sprintf(str, "%s", tmp.c_str());
 
-	pch = strtok(str, "#");
+	pch = strtok(str, " ");
 	sprintf(_szEntityName, "%s", pch);
 	int i = 0;
 	while (pch != NULL)
 	{
-		pch = strtok(NULL, "#");
+		pch = strtok(NULL, " ");
 		i++;
 
 		switch (i)

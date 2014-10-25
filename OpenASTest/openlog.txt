@@ -43,3 +43,15 @@ Log: [Sat Oct 25 00:42:28 2014] ERR_SQ_ERROR: Syntax/Runtime error occured [Drin
 Log: [Sat Oct 25 00:52:36 2014] ERR_SQ_PRINT: DrinkingScript.nut line = (3) column = (18) : error end of statement expected (; or lf)
 
 Log: [Sat Oct 25 00:52:36 2014] ERR_SQ_ERROR: Syntax/Runtime error occured [DrinkingScript.nut]
+Log: [Sat Oct 25 11:19:17 2014] ERR_SQ_PRINT: DrinkingScript.nut line = (3) column = (18) : error end of statement expected (; or lf)
+
+Log: [Sat Oct 25 11:19:17 2014] ERR_SQ_ERROR: Syntax/Runtime error occured [DrinkingScript.nut]
+Log: [Sat Oct 25 11:48:56 2014] ERR_FILE_NOT_FOUND: File not found [(null).nut]
+Log: [Sat Oct 25 11:49:28 2014] ERR_FILE_NOT_FOUND: File not found [(null).nut]
+Log: [Sat Oct 25 11:49:43 2014] ERR_FILE_NOT_FOUND: File not found [(null).nut]
+Log: [Sat Oct 25 11:50:07 2014] ERR_SQ_PRINT: DrinkingScript.nut line = (3) column = (18) : error end of statement expected (; or lf)
+
+Log: [Sat Oct 25 11:50:07 2014] ERR_SQ_ERROR: Syntax/Runtime error occured [DrinkingScript.nut]
+Log: [Sat Oct 25 11:50:39 2014] ERR_SQ_PRINT: DrinkingScript.nut line = (3) column = (18) : error end of statement expected (; or lf)
+
+Log: [Sat Oct 25 11:50:39 2014] ERR_SQ_ERROR: Syntax/Runtime error occured [DrinkingScript.nut]
