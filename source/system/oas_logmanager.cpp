@@ -25,6 +25,7 @@
 */
 
 #include <system\oas_logmanager.h>
+#include <system\oas_defaults.h>
 
 OpenAS::System::LogManager::LogManager(){ bDebugCmd = DEFAULT_DEBUG_FLAG; }
 OpenAS::System::LogManager::~LogManager(){}
@@ -38,11 +39,12 @@ char* err_str[] =
 	"ERR_FILE_NOT_FOUND",
 	"ERR_UNKNOWN", 
 	"ERR_SQ_ERROR",
-	"ERR_SQ_PRINT"
+	"ERR_SQ_PRINT",
+	"ERR_OMAP_SYNTAX"
 };
 
 char* err_msg[] = 
-{"Done.","Inssuficient space.","File not found.","Unknown error.","SQuirrel syntax/script error.","SQ"};
+{"Done.","Inssuficient space.","File not found.","Unknown error.","SQuirrel syntax/script error.","SQ","oMAP file syntax error occured."};
 
 
 

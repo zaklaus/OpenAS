@@ -34,6 +34,12 @@
     <Filter Include="Source Files\sq">
       <UniqueIdentifier>{41274ba9-8662-4423-8a6d-e54dc8dba05b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\parser">
+      <UniqueIdentifier>{3602a76e-f720-4645-bca5-030f039ea654}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\parser">
+      <UniqueIdentifier>{ccd9327c-f3cc-4bef-9208-239cd987fdf8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\sdks\SDL\begin_code.h">
@@ -336,6 +342,18 @@
     <ClInclude Include="..\include\system\oas_scriptsex.h">
       <Filter>Header Files\system</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\system\oas_map.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\parser\oas_mapparser.h">
+      <Filter>Header Files\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\oas_mapmanager.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\oas_defaults.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\system\oas_game.cpp">
@@ -433,6 +451,15 @@
     </ClCompile>
     <ClCompile Include="..\source\system\oas_scriptex.cpp">
       <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\oas_mapmanager.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\oas_map.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\parser\oas_mapparser.cpp">
+      <Filter>Source Files\parser</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

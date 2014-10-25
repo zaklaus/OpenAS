@@ -26,8 +26,10 @@
 
 #include <system\oas_script.h>
 #include <util\sq_heads.h>
-#include <system\oas_game.h>
+//#include <system\oas_game.h>
 //#include <system\oas_logmanager.h>
+#include <util\oas_timeutil.h>
+#include <system\oas_game.h>
 
 using namespace OpenAS::System;
 

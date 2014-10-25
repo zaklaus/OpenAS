@@ -56,22 +56,14 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	// Test code
 	//
-	Game g = Game("OpenAS Test Window");
+	Game* g = new Game("OpenAS Test Window");
 	//g.dlltest();
 
+	int mapID = g->GetMapManager()->InstallMap("test.omap");
+	g->GetMapManager()->LoadMap(mapID);
+	printf("%s", g->GetEntityManager()->GetEntity(0)->GetScriptName());
+	printf("%s",g->GetMapManager()->GetMap(0)->GetMapAuthor());
 
-	if(g.GetEntityManager()->CreateEntity("Player","playerscript",OpenAS::Util::Vector3D(0.0f,0.0f,0.0f),OpenAS::Util::Vector3D(0.0f,.0f,.0f),"PlayerModel")==-1){
-		printf("ah");
-	}
-	g.GetEntityManager()->CreateEntity("Auto","",OpenAS::Util::Vector3D(0.0f,0.0f,5.0f),OpenAS::Util::Vector3D(0.0f,.0f,.0f),"AutoModel");
-	g.GetEntityManager()->CreateEntity("Enemy","",OpenAS::Util::Vector3D(0.0f,0.0f,5.0f),OpenAS::Util::Vector3D(0.0f,.0f,.0f),"EnemyModel");
-
-	g.GetEntityManager()->DestroyEntity(g.GetEntityManager()->GetEntityByName("Auto")->GetID());
-
-	//std::cout <<  g.GetEntityManager()->GetEntityCount();
-
-	//g.GetLogManager()->AddLog("TestEntity",g.GetEntityManager()->GetEntityByName("Enemy")->GetEntityName(),time(NULL),1,"entity.txt");
-	//g.GetLogManager()->AddErrorLog("ERR_SUCCESS","",time(NULL),1,"openlog.txt");
 	system("pause>nul");
 	return 0;
 }

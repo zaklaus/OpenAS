@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -21,12 +21,14 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -63,6 +65,7 @@
       <PreprocessorDefinitions>WIN32;OAS_NONCLIENT_BUILD;_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;_USRDLL;VORTEXWIN32_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)\sdks\SQUIRREL3\include\;$(SolutionDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessToFile>false</PreprocessToFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -90,6 +93,7 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
       <PreprocessorDefinitions>WIN32;OAS_NONCLIENT_BUILD;_CRT_SECURE_NO_WARNINGS;NDEBUG;_WINDOWS;_USRDLL;VORTEXWIN32_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)\sdks\SQUIRREL3\include\;$(SolutionDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessToFile>false</PreprocessToFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -109,6 +113,7 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
     </BuildLog>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\parser\oas_mapparser.h" />
     <ClInclude Include="..\include\sdks\SDL\begin_code.h" />
     <ClInclude Include="..\include\sdks\SDL\close_code.h" />
     <ClInclude Include="..\include\sdks\SDL\SDL.h" />
@@ -173,11 +178,14 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
     <ClInclude Include="..\include\sdks\SDL\SDL_types.h" />
     <ClInclude Include="..\include\sdks\SDL\SDL_version.h" />
     <ClInclude Include="..\include\sdks\SDL\SDL_video.h" />
+    <ClInclude Include="..\include\system\oas_defaults.h" />
     <ClInclude Include="..\include\system\oas_entity.h" />
     <ClInclude Include="..\include\system\oas_entitymanager.h" />
     <ClInclude Include="..\include\system\oas_game.h" />
     <ClInclude Include="..\include\system\oas_interfaces.h" />
     <ClInclude Include="..\include\system\oas_logmanager.h" />
+    <ClInclude Include="..\include\system\oas_map.h" />
+    <ClInclude Include="..\include\system\oas_mapmanager.h" />
     <ClInclude Include="..\include\system\oas_platform.h" />
     <ClInclude Include="..\include\system\oas_script.h" />
     <ClInclude Include="..\include\system\oas_scripts.h" />
@@ -231,10 +239,13 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
     <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqstate.cpp" />
     <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqtable.cpp" />
     <ClCompile Include="..\sdks\SQUIRREL3\squirrel\sqvm.cpp" />
+    <ClCompile Include="..\source\parser\oas_mapparser.cpp" />
     <ClCompile Include="..\source\system\oas_entity.cpp" />
     <ClCompile Include="..\source\system\oas_entitymanager.cpp" />
     <ClCompile Include="..\source\system\oas_game.cpp" />
     <ClCompile Include="..\source\system\oas_logmanager.cpp" />
+    <ClCompile Include="..\source\system\oas_map.cpp" />
+    <ClCompile Include="..\source\system\oas_mapmanager.cpp" />
     <ClCompile Include="..\source\system\oas_script.cpp" />
     <ClCompile Include="..\source\system\oas_scriptex.cpp" />
     <ClCompile Include="..\source\system\oas_scripts.cpp" />

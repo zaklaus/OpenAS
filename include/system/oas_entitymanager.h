@@ -27,12 +27,13 @@
 #ifndef OAS_ENTITYMANAGER_H
 #define OAS_ENTITYMANAGER_H
 
+#include<system\oas_defaults.h>
 #include<system\oas_platform.h>
 #include<system\oas_entity.h>
 #include<util\oas_math.h>
 #include<vector>
 
-#define MAX_ENTITIES 10
+
 
 namespace OpenAS
 {

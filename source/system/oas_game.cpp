@@ -27,42 +27,59 @@
 #include <system/oas_game.h>
 
 
-OpenAS::System::Game::Game(const std::string& title)
+
+
+Game::Game(const std::string& title)
 {
+	this->m_gInstance = this;
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	m_title = title;
 	m_cSDLApplication = new OpenAS::System::SDLApplication(title);
+	this->ent = (unsigned int)&this->m_cEntityManager;
 }
 
-OpenAS::System::Game::~Game()
+Game::~Game()
 {
 
 }
+
+Game *Game::m_gInstance;
 
 // Get member methods
 //
-OpenAS::System::LogManager* OpenAS::System::Game::GetLogManager()
+OpenAS::System::LogManager* Game::GetLogManager()
 {
 	return &this->m_cLogManager;
 }
 
-OpenAS::System::SDLApplication* OpenAS::System::Game::GetSDLApplication()
+OpenAS::System::SDLApplication* Game::GetSDLApplication()
 {
 	return this->m_cSDLApplication;
 }
 
-OpenAS::System::EntityManager* OpenAS::System::Game::GetEntityManager()
+OpenAS::System::EntityManager* Game::GetEntityManager()
 {
 	return &this->m_cEntityManager;
 }
 
-OpenAS::System::ScriptsEx* OpenAS::System::Game::GetScriptsManager()
+OpenAS::System::EntityManager Game::GetStaticEntityManager()
+{
+	return this->m_cEntityManager;
+}
+
+OpenAS::System::ScriptsEx* Game::GetScriptsManager()
 {
 	return &this->m_cScripts;
 }
 
+OpenAS::System::MapManager* Game::GetMapManager()
+{ 
+	return &this->m_cMapManager; 
+};
+
 // Test code
 //
-void OpenAS::System::Game::dlltest()
+void Game::dlltest()
 {
 	printf("Hello, DLL World!\n");
 	this->GetLogManager()->AddLog("TestMethod","Testing DLL Log Manager",time(NULL),1,"test.txt");

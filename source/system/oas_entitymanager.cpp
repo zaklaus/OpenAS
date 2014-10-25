@@ -25,10 +25,10 @@
 */
 
 #include <system\oas_entitymanager.h>
+#include <util\oas_timeutil.h>
 #include <system\oas_game.h>
 
-extern Game* g;
-
+__declspec(dllexport) Game *g;
 
 OpenAS::System::EntityManager::EntityManager()
 {

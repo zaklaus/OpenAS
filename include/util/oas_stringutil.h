@@ -28,12 +28,24 @@
 #define OAS_STRINGUTIL_H
 
 #include <string>
+#include <fstream>
+#include <sstream>
 
 namespace OpenAS {
 
 	namespace Util {
 
-
+		template <char C>
+		inline OAS_API std::istream& expect(std::istream& in)
+		{
+			if ((in >> std::ws).peek() == C) {
+				in.ignore();
+			}
+			else {
+				in.setstate(std::ios_base::failbit);
+			}
+			return in;
+		}
 
 	}
 }

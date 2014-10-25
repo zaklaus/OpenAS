@@ -32,9 +32,6 @@
 #include <util\oas_ioutil.h>
 #include <util\oas_timeutil.h>
 
-#define LOG_FILE "openlog.txt"
-#define DEFAULT_DEBUG_FLAG 1
-#define LOG(p,q) AddLog(p,q,time(NULL),1,LOG_FILE)
 
 
 namespace OpenAS {

@@ -1,0 +1,45 @@
+Log: [Mon Oct 13 18:31:45 2014] ERR_SUCCESS: Done.[]
+Log: [Mon Oct 13 18:45:33 2014] ERR_SQ_PRINT: playerscript.nut line = (8) column = (9) : error end of statement expected (; or lf)
+
+Log: [Mon Oct 13 18:46:05 2014] ERR_SQ_PRINT: playerscript.nut line = (8) column = (9) : error end of statement expected (; or lf)
+
+Log: [Mon Oct 13 18:46:05 2014] ERR_SQ_ERROR: Syntax/Runtime error occured[playerscript.nut]
+Log: [Mon Oct 13 18:48:19 2014] ERR_SQ_PRINT: playerscript.nut line = (8) column = (9) : error end of statement expected (; or lf)
+
+Log: [Mon Oct 13 18:48:19 2014] ERR_SQ_ERROR: Syntax/Runtime error occured[playerscript.nut]
+Log: [Mon Oct 13 18:49:09 2014] ERR_SQ_PRINT: playerscript.nut line = (8) column = (9) : error end of statement expected (; or lf)
+
+Log: [Mon Oct 13 18:49:09 2014] ERR_SQ_ERROR: Syntax/Runtime error occured[playerscript.nut]
+Log: [Mon Oct 13 18:51:55 2014] ERR_SQ_PRINT: playerscript.nut line = (8) column = (9) : error end of statement expected (; or lf)
+
+Log: [Mon Oct 13 18:51:55 2014] ERR_SQ_ERROR: Syntax/Runtime error occured[playerscript.nut]
+Log: [Mon Oct 13 18:51:55 2014] ERR_SUCCESS: Done.[]
+Log: [Mon Oct 13 18:52:38 2014] ERR_SQ_PRINT: playerscript.nut line = (8) column = (9) : error end of statement expected (; or lf)
+
+Log: [Mon Oct 13 18:52:38 2014] ERR_SQ_ERROR: Syntax/Runtime error occured or file not found [playerscript.nut]
+Log: [Mon Oct 13 18:52:38 2014] ERR_SUCCESS: Done.[]
+Log: [Mon Oct 13 18:54:03 2014] ERR_SQ_PRINT: playerscript.nut line = (8) column = (9) : error end of statement expected (; or lf)
+
+Log: [Mon Oct 13 18:54:03 2014] ERR_SQ_ERROR: Syntax/Runtime error occured [playerscript.nut]
+Log: [Mon Oct 13 18:54:03 2014] ERR_SUCCESS: Done.[]
+Log: [Mon Oct 13 18:54:54 2014] ERR_SQ_PRINT: playerscript.nut line = (8) column = (9) : error end of statement expected (; or lf)
+
+Log: [Mon Oct 13 18:54:54 2014] ERR_SQ_ERROR: Syntax/Runtime error occured [playerscript.nut]
+Log: [Mon Oct 13 18:59:36 2014] ERR_SQ_PRINT: playerscript.nut line = (8) column = (9) : error end of statement expected (; or lf)
+
+Log: [Mon Oct 13 18:59:36 2014] ERR_SQ_ERROR: Syntax/Runtime error occured [playerscript.nut]
+Log: [Mon Oct 20 11:35:26 2014] ERR_SQ_PRINT: playerscript.nut line = (8) column = (9) : error end of statement expected (; or lf)
+
+Log: [Mon Oct 20 11:35:26 2014] ERR_SQ_ERROR: Syntax/Runtime error occured [playerscript.nut]
+Log: [Mon Oct 20 11:46:21 2014] ERR_SQ_PRINT: playerscript.nut line = (8) column = (9) : error end of statement expected (; or lf)
+
+Log: [Mon Oct 20 11:46:21 2014] ERR_SQ_ERROR: Syntax/Runtime error occured [playerscript.nut]
+Log: [Mon Oct 20 12:03:54 2014] ERR_SQ_PRINT: playerscript.nut line = (8) column = (9) : error end of statement expected (; or lf)
+
+Log: [Mon Oct 20 12:03:54 2014] ERR_SQ_ERROR: Syntax/Runtime error occured [playerscript.nut]
+Log: [Sat Oct 25 00:42:28 2014] ERR_SQ_PRINT: DrinkingScript.nut line = (3) column = (18) : error end of statement expected (; or lf)
+
+Log: [Sat Oct 25 00:42:28 2014] ERR_SQ_ERROR: Syntax/Runtime error occured [DrinkingScript.nut]
+Log: [Sat Oct 25 00:52:36 2014] ERR_SQ_PRINT: DrinkingScript.nut line = (3) column = (18) : error end of statement expected (; or lf)
+
+Log: [Sat Oct 25 00:52:36 2014] ERR_SQ_ERROR: Syntax/Runtime error occured [DrinkingScript.nut]

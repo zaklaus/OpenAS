@@ -25,9 +25,9 @@
 */
 
 #include <system\oas_entity.h>
-#include "system\oas_game.h"
+#include <system\oas_game.h>
 
-__declspec(dllexport) OpenAS::System::Game *g;
+extern Game* g;
 
 OpenAS::System::Entity::Entity(int _id, const char* _szEntityName, const char* _szScriptName, OpenAS::Util::Vector3D _vPosition, OpenAS::Util::Vector3D _vRotation, const char* _szModelName)
 {

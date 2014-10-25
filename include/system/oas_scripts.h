@@ -69,6 +69,7 @@ namespace OpenAS
 					}
 					return NULL;
 				}
+				return NULL;
 			};
 
 			void Call(const char * szFunc, int iArgCount, SQObject * pArguments);

@@ -27,7 +27,8 @@
 #include <util\sq_funcdef.h>
 #include <system\oas_game.h>
 
-extern Game* g;
+#pragma once
+	extern Game* g;
 
 SQInteger sq_testf(SQVM *squirrelVM)
 {

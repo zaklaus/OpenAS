@@ -23,49 +23,58 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 	SOFTWARE.
 */
-#pragma once
-
 #ifndef OAS_GAME_H
 #define OAS_GAME_H
 
+#define CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+
+
+#ifdef _DEBUG
+#define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
+#define new DEBUG_NEW
+#endif
+
+#include <system\oas_defaults.h>
 #include <system\oas_platform.h>
 #include <system\oas_sdl2application.h>
 #include <system\oas_logmanager.h>
 #include <system\oas_entitymanager.h>
 #include <system\oas_scriptsex.h>
+#include <system\oas_mapmanager.h>
 
-namespace OpenAS
+class OAS_API Game
 {
-	namespace System
-	{
-		
-
-		static class OAS_API Game
-		{
-		private:
-			OpenAS::System::LogManager m_cLogManager;
-			OpenAS::System::SDLApplication* m_cSDLApplication;
-			OpenAS::System::EntityManager m_cEntityManager;
-			OpenAS::System::ScriptsEx m_cScripts;
-		public:
-			Game(const std::string& title);
-			~Game();
+private:
+	OpenAS::System::LogManager m_cLogManager;
+	OpenAS::System::SDLApplication* m_cSDLApplication;
+	OpenAS::System::EntityManager m_cEntityManager;
+	OpenAS::System::ScriptsEx m_cScripts;
+	OpenAS::System::MapManager m_cMapManager;
+public:
+	static Game* GetGame(){ return m_gInstance; };
+	Game(const std::string& title);
+	~Game();
 
 
-			// Member methods
-			//
-			OpenAS::System::LogManager* GetLogManager();
-			OpenAS::System::SDLApplication* GetSDLApplication();
-			OpenAS::System::EntityManager* GetEntityManager();
-			OpenAS::System::ScriptsEx* GetScriptsManager();
+	// Member methods
+	//
+	OpenAS::System::LogManager* GetLogManager();
+	OpenAS::System::SDLApplication* GetSDLApplication();
+	OpenAS::System::EntityManager* GetEntityManager();
+	OpenAS::System::EntityManager GetStaticEntityManager();
+	//OpenAS::System::EntityManager* GetCachedEntityManager(){ return (OpenAS::System::EntityManager*)ent; };
+	OpenAS::System::ScriptsEx* GetScriptsManager();
+	OpenAS::System::MapManager* GetMapManager();
+	
+	// Test methods
+	//
+	void dlltest();
 
-			// Test methods
-			//
-			void dlltest();
-
-		private:
-			std::string m_title;
-		};
-	}
-}
+private:
+	std::string m_title;
+	unsigned int ent;
+	static Game* m_gInstance;
+};
 #endif
