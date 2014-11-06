@@ -40,18 +40,20 @@ int OpenAS::Parser::CreateMapEntity(std::string tmp)
 	char str[128] = "";
 	sprintf(str, "%s", tmp.c_str());
 
-	pch = strtok(str, " ");
+	pch = strtok(str, "$");
 	sprintf(_szEntityName, "%s", pch);
 	int i = 0;
+	
 	while (pch != NULL)
 	{
-		pch = strtok(NULL, " ");
+		pch = strtok(NULL, "$");
 		i++;
-
+		
 		switch (i)
 		{
 		case 1:
 			sprintf(_szScriptName, "%s", pch);
+			//printf(_szScriptName);
 			break;
 		case 2:
 			posx = (float)atof(pch);
@@ -78,10 +80,10 @@ int OpenAS::Parser::CreateMapEntity(std::string tmp)
 	}
 
 	delete pch;
-
+	//printf(_szScriptName);
 	OpenAS::Util::Vector3D pos(posx, posy, posz);
 	OpenAS::Util::Vector3D rot(rotx, roty, rotz);
-
+	//printf("%f,%f,$f",pos.x,pos.y,pos.z);
 	//printf("%s := %f\n", _szEntityName, posx);
 
 	//delete _szEntityName, _szModelName, _szScriptName;

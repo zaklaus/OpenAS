@@ -70,7 +70,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\$(TargetFileName)" "$(SolutionDir)\OpenASTest\$(Configuration)\"
@@ -100,7 +100,7 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "$(SolutionDir)\OpenASBuild\$(ProjectName)\$(Configuration)\$(TargetFileName)" "$(SolutionDir)\OpenASTest\$(Configuration)\"
@@ -114,6 +114,7 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\include\parser\oas_mapparser.h" />
+    <ClInclude Include="..\include\parser\oas_modelparser.h" />
     <ClInclude Include="..\include\sdks\SDL\begin_code.h" />
     <ClInclude Include="..\include\sdks\SDL\close_code.h" />
     <ClInclude Include="..\include\sdks\SDL\SDL.h" />
@@ -182,15 +183,18 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
     <ClInclude Include="..\include\system\oas_entity.h" />
     <ClInclude Include="..\include\system\oas_entitymanager.h" />
     <ClInclude Include="..\include\system\oas_game.h" />
+    <ClInclude Include="..\include\system\oas_input.h" />
     <ClInclude Include="..\include\system\oas_interfaces.h" />
     <ClInclude Include="..\include\system\oas_logmanager.h" />
     <ClInclude Include="..\include\system\oas_map.h" />
     <ClInclude Include="..\include\system\oas_mapmanager.h" />
+    <ClInclude Include="..\include\system\oas_model.h" />
     <ClInclude Include="..\include\system\oas_platform.h" />
     <ClInclude Include="..\include\system\oas_script.h" />
     <ClInclude Include="..\include\system\oas_scripts.h" />
     <ClInclude Include="..\include\system\oas_scriptsex.h" />
     <ClInclude Include="..\include\system\oas_sdl2application.h" />
+    <ClInclude Include="..\include\system\oas_singleton.h" />
     <ClInclude Include="..\include\util\oas_ioutil.h" />
     <ClInclude Include="..\include\util\oas_math.h" />
     <ClInclude Include="..\include\util\oas_stringutil.h" />
@@ -243,9 +247,12 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
     <ClCompile Include="..\source\system\oas_entity.cpp" />
     <ClCompile Include="..\source\system\oas_entitymanager.cpp" />
     <ClCompile Include="..\source\system\oas_game.cpp" />
+    <ClCompile Include="..\source\system\oas_input.cpp" />
     <ClCompile Include="..\source\system\oas_logmanager.cpp" />
     <ClCompile Include="..\source\system\oas_map.cpp" />
     <ClCompile Include="..\source\system\oas_mapmanager.cpp" />
+    <ClCompile Include="..\source\system\oas_model.cpp" />
+    <ClCompile Include="..\source\system\oas_modelparser.cpp" />
     <ClCompile Include="..\source\system\oas_script.cpp" />
     <ClCompile Include="..\source\system\oas_scriptex.cpp" />
     <ClCompile Include="..\source\system\oas_scripts.cpp" />

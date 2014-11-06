@@ -31,3 +31,15 @@
 #include <stdio.h>
 
 SQInteger sq_testf(SQVM* pVM);
+SQInteger sq_print(SQVM*);
+SQInteger sq_drawRect(SQVM*);
+SQInteger sq_str(SQVM*);
+SQInteger sq_entityRotate(SQVM*);
+SQInteger sq_entityTranslate(SQVM*);
+SQInteger sq_entityGetPosition(SQVM*);
+SQInteger sq_entityGetRotation(SQVM*);
+SQInteger sq_camSetPosition(SQVM*);
+SQInteger sq_camSetRotation(SQVM*);
+SQInteger sq_inputGetKey(SQVM*);
+SQInteger sq_inputGetKeyUp(SQVM*);
+SQInteger sq_inputGetKeyDown(SQVM*);

@@ -1,7 +1,0 @@
-// Test Map
-MapName TestMap
-MapAuthor ZaKlaus
-MapVersion 1.0a
-voidsetting 2
-
-CreateEntity PolskaVodka DrinkingScript 5f 0f 0f 0f 0f 0f PolskaVodka.obj

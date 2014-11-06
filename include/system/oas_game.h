@@ -36,6 +36,8 @@
 #define new DEBUG_NEW
 #endif
 
+#include <system\oas_interfaces.h>
+#include <system\oas_singleton.h>
 #include <system\oas_defaults.h>
 #include <system\oas_platform.h>
 #include <system\oas_sdl2application.h>
@@ -54,9 +56,10 @@ private:
 	OpenAS::System::MapManager m_cMapManager;
 public:
 	static Game* GetGame(){ return m_gInstance; };
-	Game(const std::string& title);
+	Game(const std::string& title,std::string);
 	~Game();
 
+	std::string m_firstMap;
 
 	// Member methods
 	//
@@ -67,7 +70,7 @@ public:
 	//OpenAS::System::EntityManager* GetCachedEntityManager(){ return (OpenAS::System::EntityManager*)ent; };
 	OpenAS::System::ScriptsEx* GetScriptsManager();
 	OpenAS::System::MapManager* GetMapManager();
-	
+	bool IsRunning(){ return m_bIsRunning; };
 	// Test methods
 	//
 	void dlltest();
@@ -76,5 +79,6 @@ private:
 	std::string m_title;
 	unsigned int ent;
 	static Game* m_gInstance;
+	bool m_bIsRunning;
 };
 #endif

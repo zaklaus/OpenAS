@@ -27,10 +27,30 @@
 #include <system\oas_logmanager.h>
 #include <system\oas_defaults.h>
 
-OpenAS::System::LogManager::LogManager(){ bDebugCmd = DEFAULT_DEBUG_FLAG; }
-OpenAS::System::LogManager::~LogManager(){}
+OpenAS::System::LogManager::LogManager(){ bDebugCmd = DEFAULT_DEBUG_FLAG;  }
+OpenAS::System::LogManager::~LogManager(){ VStop(); }
 
 using namespace OpenAS::System;
+
+LogManager& g_LogManager = LogManager::instance();
+
+void LogManager::VStart()
+{
+	std::string start =
+		"======== OpenAS Startup ========\n"
+		"Date: " + Util::TStoDT(time(NULL)) +
+		"\n================================\n";
+	Util::WriteFile(LOG_FILE, start, std::ios::app);
+}
+
+void LogManager::VStop()
+{
+	std::string stop =
+		"======== OpenAS Shutdown ========\n"
+		"Date: " + Util::TStoDT(time(NULL)) +
+		"\n=================================\n";
+	Util::WriteFile(LOG_FILE, stop, std::ios::app);
+}
 
 char* err_str[] =
 {
@@ -40,11 +60,13 @@ char* err_str[] =
 	"ERR_UNKNOWN", 
 	"ERR_SQ_ERROR",
 	"ERR_SQ_PRINT",
-	"ERR_OMAP_SYNTAX"
+	"ERR_OMAP_SYNTAX",
+	"ERR_OBJ_FILE",
+	"ERR_OBJ_PARSER"
 };
 
 char* err_msg[] = 
-{"Done.","Inssuficient space.","File not found.","Unknown error.","SQuirrel syntax/script error.","SQ","oMAP file syntax error occured."};
+{"Done.","Inssuficient space.","File not found.","Unknown error.","SQuirrel syntax/script error.","SQ","oMAP file syntax error occured.","Unable to open file.","Unable to parse OBJ file."};
 
 
 

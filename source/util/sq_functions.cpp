@@ -29,5 +29,17 @@
 int Init(SQVM* vM)
 {
 	RegisterFunction(vM,(char*)"testf",(SQFUNCTION)sq_testf,0,(char*)"");
+	RegisterFunction(vM, (char*)"print", (SQFUNCTION)sq_print, 2, (char*)".s");
+	RegisterFunction(vM, (char*)"str", (SQFUNCTION)sq_str, 2, (char*)".f");
+	RegisterFunction(vM, (char*)"inputGetKey", (SQFUNCTION)sq_inputGetKey, 2, (char*)".s");
+	RegisterFunction(vM, (char*)"inputGetKeyUp", (SQFUNCTION)sq_inputGetKeyUp, 2, (char*)".s");
+	RegisterFunction(vM, (char*)"inputGetKeyDown", (SQFUNCTION)sq_inputGetKeyDown, 2, (char*)".s");
+	RegisterFunction(vM, (char*)"entityTranslate", (SQFUNCTION)sq_entityTranslate, 5, (char*)".dfff");
+	RegisterFunction(vM, (char*)"camSetPosition", (SQFUNCTION)sq_camSetPosition, 4, (char*)".fff");
+	RegisterFunction(vM, (char*)"camSetRotation", (SQFUNCTION)sq_camSetRotation, 4, (char*)".fff");
+	RegisterFunction(vM, (char*)"entityRotate", (SQFUNCTION)sq_entityRotate, 5, (char*)".dfff");
+	RegisterFunction(vM, (char*)"entityGetPosition", (SQFUNCTION)sq_entityGetPosition, 2, (char*)".d");
+	RegisterFunction(vM, (char*)"entityGetRotation", (SQFUNCTION)sq_entityGetRotation, 2, (char*)".d");
+	RegisterFunction(vM, (char*)"drawRect", (SQFUNCTION)sq_drawRect, 9, (char*)".dddddddd");
 	return 1;
 }

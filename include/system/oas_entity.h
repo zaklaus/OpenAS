@@ -33,6 +33,7 @@
 #include<util\oas_stringutil.h>
 #include <system\oas_script.h>
 #include<util\oas_math.h>
+#include <system\oas_model.h>
 
 namespace OpenAS
 {
@@ -61,6 +62,10 @@ namespace OpenAS
 			int SetID(int id);
 			void SetScriptID(int id){ScriptID = id;};
 			void SetScript(Script s){scr = &s;};
+			bool HasModel(){ return hasModel; };
+			void SetPosition(float x, float y, float z){ vPosition.x = x; vPosition.y = y; vPosition.z = z; };
+			void SetRotation(float x, float y, float z){ vRotation.x = x; vRotation.y = y; vRotation.z = z; };
+			Model* GetModel(){ return &model; };
 		private:
 
 			// Internal variables
@@ -68,8 +73,10 @@ namespace OpenAS
 
 			char szEntityName[256], szModelName[256], szScriptName[256];
 			OpenAS::Util::Vector3D vPosition, vRotation;
+			Model model;
 			int ID;
 			int ScriptID;
+			bool hasModel;
 			Script* scr;
 		};
 	}

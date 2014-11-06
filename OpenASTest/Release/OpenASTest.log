@@ -1,0 +1,132 @@
+﻿Build started 6.11.2014 13:37:53.
+     1>Project "C:\Disk D\OpenASEngine\OpenASTest\OpenASTest.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Disk D\OpenASEngine\\OpenASTest\Release\OpenASTest.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Disk D\OpenASEngine\\OpenASBuild\OpenASWin32\Release\\" OpenASWin32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Disk D\OpenASEngine\\OpenASTest\Release\OpenASTest.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Disk D\OpenASEngine\\OpenASTest\Release\OpenASTest.lib" /MACHINE:X86 /SAFESEH "C:\Disk D\OpenASEngine\\OpenASTest\Release\winmain.obj"
+         Generating code
+         Finished generating code
+         OpenASTest.vcxproj -> C:\Disk D\OpenASEngine\\OpenASTest\Release\OpenASTest.exe
+       PostBuildEvent:
+         xcopy /s /y "C:\Disk D\OpenASEngine\\include" "C:\GitHub\OpenAS\include\"
+         xcopy /s /y "C:\Disk D\OpenASEngine\\source" "C:\GitHub\OpenAS\source\"
+         xcopy /y "C:\Disk D\OpenASEngine\\lib\SDL2.dll" "C:\Disk D\OpenASEngine\\OpenASTest\Release\"
+         
+         :VCEnd
+         C:\Disk D\OpenASEngine\\include\parser\oas_mapparser.h
+         C:\Disk D\OpenASEngine\\include\parser\oas_modelparser.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\begin_code.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\close_code.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_assert.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_atomic.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_audio.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_bits.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_blendmode.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_clipboard.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_config.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_cpuinfo.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_endian.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_error.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_events.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_filesystem.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_gamecontroller.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_gesture.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_haptic.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_hints.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_joystick.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_keyboard.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_keycode.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_loadso.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_log.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_main.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_messagebox.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_mouse.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_mutex.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_name.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_opengl.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_opengles.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_opengles2.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_pixels.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_platform.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_power.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_quit.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_rect.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_render.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_revision.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_rwops.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_scancode.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_shape.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_stdinc.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_surface.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_system.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_syswm.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_test.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_test_assert.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_test_common.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_test_compare.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_test_crc32.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_test_font.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_test_fuzzer.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_test_harness.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_test_images.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_test_log.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_test_md5.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_test_random.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_thread.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_timer.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_touch.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_types.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_version.h
+         C:\Disk D\OpenASEngine\\include\sdks\SDL\SDL_video.h
+         C:\Disk D\OpenASEngine\\include\system\oas_defaults.h
+         C:\Disk D\OpenASEngine\\include\system\oas_entity.h
+         C:\Disk D\OpenASEngine\\include\system\oas_entitymanager.h
+         C:\Disk D\OpenASEngine\\include\system\oas_game.h
+         C:\Disk D\OpenASEngine\\include\system\oas_input.h
+         C:\Disk D\OpenASEngine\\include\system\oas_interfaces.h
+         C:\Disk D\OpenASEngine\\include\system\oas_logmanager.h
+         C:\Disk D\OpenASEngine\\include\system\oas_map.h
+         C:\Disk D\OpenASEngine\\include\system\oas_mapmanager.h
+         C:\Disk D\OpenASEngine\\include\system\oas_model.h
+         C:\Disk D\OpenASEngine\\include\system\oas_platform.h
+         C:\Disk D\OpenASEngine\\include\system\oas_script.h
+         C:\Disk D\OpenASEngine\\include\system\oas_scripts.h
+         C:\Disk D\OpenASEngine\\include\system\oas_scriptsex.h
+         C:\Disk D\OpenASEngine\\include\system\oas_sdl2application.h
+         C:\Disk D\OpenASEngine\\include\system\oas_singleton.h
+         C:\Disk D\OpenASEngine\\include\system\oas_tickmanager.h
+         C:\Disk D\OpenASEngine\\include\util\oas_ioutil.h
+         C:\Disk D\OpenASEngine\\include\util\oas_math.h
+         C:\Disk D\OpenASEngine\\include\util\oas_stringutil.h
+         C:\Disk D\OpenASEngine\\include\util\oas_timeutil.h
+         C:\Disk D\OpenASEngine\\include\util\sq_funcdef.h
+         C:\Disk D\OpenASEngine\\include\util\sq_functions.h
+         C:\Disk D\OpenASEngine\\include\util\sq_heads.h
+         C:\Disk D\OpenASEngine\\include\util\sq_utils.h
+         91 File(s) copied
+         C:\Disk D\OpenASEngine\\source\parser\oas_mapparser.cpp
+         C:\Disk D\OpenASEngine\\source\system\oas_entity.cpp
+         C:\Disk D\OpenASEngine\\source\system\oas_entitymanager.cpp
+         C:\Disk D\OpenASEngine\\source\system\oas_game.cpp
+         C:\Disk D\OpenASEngine\\source\system\oas_input.cpp
+         C:\Disk D\OpenASEngine\\source\system\oas_logmanager.cpp
+         C:\Disk D\OpenASEngine\\source\system\oas_map.cpp
+         C:\Disk D\OpenASEngine\\source\system\oas_mapmanager.cpp
+         C:\Disk D\OpenASEngine\\source\system\oas_model.cpp
+         C:\Disk D\OpenASEngine\\source\system\oas_modelparser.cpp
+         C:\Disk D\OpenASEngine\\source\system\oas_script.cpp
+         C:\Disk D\OpenASEngine\\source\system\oas_scriptex.cpp
+         C:\Disk D\OpenASEngine\\source\system\oas_scripts.cpp
+         C:\Disk D\OpenASEngine\\source\system\oas_sdl2application.cpp
+         C:\Disk D\OpenASEngine\\source\test\winmain.cpp
+         C:\Disk D\OpenASEngine\\source\util\oas_math.cpp
+         C:\Disk D\OpenASEngine\\source\util\sq_funcdef.cpp
+         C:\Disk D\OpenASEngine\\source\util\sq_functions.cpp
+         C:\Disk D\OpenASEngine\\source\util\sq_utils.cpp
+         19 File(s) copied
+         C:\Disk D\OpenASEngine\\lib\SDL2.dll
+         1 File(s) copied
+     1>Done Building Project "C:\Disk D\OpenASEngine\OpenASTest\OpenASTest.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.48

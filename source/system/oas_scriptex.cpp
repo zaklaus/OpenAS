@@ -32,7 +32,9 @@ using namespace OpenAS::System;
 void ScriptsEx::Call(Script* s, const char * szFunc, int iArgCount, SQObject * pArguments)
 {
 	if (s) {
+//		printf("%s", s->GetVM());
 		// get the script vm pointer
+
 		SQVM * pVM = s->GetVM();
 
 		// Get the stack top

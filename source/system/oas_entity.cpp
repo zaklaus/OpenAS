@@ -39,11 +39,20 @@ OpenAS::System::Entity::Entity(int _id, const char* _szEntityName, const char* _
 	this->vPosition = _vPosition;
 	this->vRotation = _vRotation;
 	this->ID = _id;
+	this->hasModel = false;
+	this->scr = NULL;
 
-	if(_szScriptName[0] != 0)
+	if (_szModelName[0] != '0')
+	{
+		this->model.LoadModel(_szModelName);
+		this->hasModel = true;
+	}
+
+	if(_szScriptName[0] != '0')
 	{
 		char tmp[256] = "";
 		sprintf(tmp,"%s.nut",_szScriptName);
+		//printf(tmp);
 		//int sid = g->GetScriptsManager()->LoadScript(_id,tmp);
 
 		//this->SetScriptID(sid);
@@ -52,6 +61,7 @@ OpenAS::System::Entity::Entity(int _id, const char* _szEntityName, const char* _
 		if(tmpz->GetVM() != NULL)
 		{
 			this->scr = tmpz;
+			RegisterVariable(scr->GetVM(), "me", this->ID);
 			g->GetScriptsManager()->Call(scr,"onStart",0,NULL);
 		}
 	}

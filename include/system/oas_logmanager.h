@@ -32,15 +32,16 @@
 #include <util\oas_ioutil.h>
 #include <util\oas_timeutil.h>
 
-
+#include <system\oas_singleton.h>
 
 namespace OpenAS {
 	namespace System {
 
 		
 
-		class OAS_API LogManager
+		class OAS_API LogManager : public Singleton <LogManager>, IManager
 		{
+			friend class Singleton < LogManager > ;
 		private:
 			bool bDebugCmd;
 			
@@ -48,6 +49,9 @@ namespace OpenAS {
 		public:
 			LogManager();
 			~LogManager();
+
+			void VStart() override;
+			void VStop() override;
 
 			void AddLog(std::string title,std::string msg,const time_t ts,int cmd,std::string filename);
 			void AddErrorLog(std::string err, std::string msg,const time_t ts,int cmd,std::string filename);
@@ -58,6 +62,7 @@ namespace OpenAS {
 			//char** GetError(const char* err){ /*return err_msg[errno];*/ for(int i = 0; i < sizeof(err_str); i++) {if(!strcmp(err_str[i],err)){ return (char**){err_str[i],err_msg[i]}; }} return (char**){"",""}; };
 			
 		};
+		extern OAS_API LogManager& g_LogManager;
 	}
 }
 #endif

@@ -354,6 +354,18 @@
     <ClInclude Include="..\include\system\oas_defaults.h">
       <Filter>Header Files\system</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\system\oas_singleton.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\oas_model.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\parser\oas_modelparser.h">
+      <Filter>Header Files\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\system\oas_input.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\system\oas_game.cpp">
@@ -460,6 +472,15 @@
     </ClCompile>
     <ClCompile Include="..\source\parser\oas_mapparser.cpp">
       <Filter>Source Files\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\oas_model.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\oas_modelparser.cpp">
+      <Filter>Source Files\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\oas_input.cpp">
+      <Filter>Source Files\system</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

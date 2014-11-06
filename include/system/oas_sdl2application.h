@@ -29,7 +29,10 @@
 
 #include <system\oas_platform.h>
 #include <system\oas_interfaces.h>
+#include <system\oas_input.h>
 #include <util\oas_stringutil.h>
+#include <util\oas_math.h>
+#include <vector>
 #include <SDL.h>
 
 namespace OpenAS {
@@ -39,19 +42,35 @@ namespace OpenAS {
 		class OAS_API SDLApplication : public IApplication
 		{
 		public:
+			
+			void BuildFont();
 			SDLApplication(const std::string& title);
 
 			~SDLApplication();
 
 			bool initialized() override;
-			int  run()         override;
+			int  run() override;
 
+			SDL_Surface* GetSurface(){ return m_surface; };
+
+			void SetPosition(float x, float y, float z){ vPosition.x = x; vPosition.y = y; vPosition.z = z; };
+			void SetRotation(float x, float y, float z){ vRotation.x = x; vRotation.y = y; vRotation.z = z; };
+			Util::Vector3D GetPosition(){ return vPosition; };
+			Util::Vector3D GetRotation(){ return vRotation; };
+			int GetKeyByName(const char* str){ return SDL_GetScancodeFromName(str); };
+			void SDLApplication::glPrint(const char *fmt, ...);
+			Input* GetInput(){ return &m_input; };
 		private:
 			SDL_Window*   m_window;
 			SDL_GLContext m_context;
+			SDL_Surface*  m_surface;
+			Input  m_input;
 			bool          m_initialized;
 			bool          m_running;
 			std::string   m_title;
+			Util::Vector3D vPosition;
+			Util::Vector3D vRotation;
+			int        m_baseFont;
 		};
 
 	}

@@ -56,14 +56,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	// Test code
 	//
-	Game* g = new Game("OpenAS Test Window");
+	Game* g = new Game("OpenAS Test Window","menu.omap");
 	//g.dlltest();
 
-	int mapID = g->GetMapManager()->InstallMap("test.omap");
-	g->GetMapManager()->LoadMap(mapID);
-	printf("%s", g->GetEntityManager()->GetEntity(0)->GetScriptName());
-	printf("%s",g->GetMapManager()->GetMap(0)->GetMapAuthor());
-
-	system("pause>nul");
 	return 0;
 }

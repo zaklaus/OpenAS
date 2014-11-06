@@ -1,2 +1,0 @@
-Log: [Mon Oct 13 18:35:14 2014] SQ3: playerscript.nut line = (8) column = (9) : error end of statement expected (; or lf)
-

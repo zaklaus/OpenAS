@@ -31,8 +31,6 @@
 //
 // File Authors: adamix
 //
-// License: See LICENSE in root directory
-//
 //-----------------------------------------------------
 
 //#include "main.h"

@@ -29,13 +29,22 @@
 
 
 
-Game::Game(const std::string& title)
+Game::Game(const std::string& title, std::string mapname)
 {
+	printf("OpenAS Engine by ZaKlaus\nLoading map: %s\n",mapname.c_str());
 	this->m_gInstance = this;
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	m_title = title;
 	m_cSDLApplication = new OpenAS::System::SDLApplication(title);
 	this->ent = (unsigned int)&this->m_cEntityManager;
+	this->m_cLogManager.VStart();
+	this->m_bIsRunning = true;
+	m_firstMap = mapname;
+	this->m_cSDLApplication->run();
+
+	// SDL window is closed
+	//
+	this->m_bIsRunning = false;
 }
 
 Game::~Game()

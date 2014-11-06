@@ -1,0 +1,8 @@
+// Test Map
+MapName MainMenu
+MapAuthor ZaKlaus
+MapVersion 1.0a
+voidsetting 2
+
+//CreateEntity GameLogic$logic$0$0$0$0$0$0$cube.obj
+CreateEntity Room$logic$0$0$0$0$0$0$untitled.obj

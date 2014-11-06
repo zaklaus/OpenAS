@@ -28,21 +28,112 @@
 #define OAS_INTERFACES_H
 
 #include<system\oas_platform.h>
+#include<Windows.h>
 
 namespace OpenAS {
 
-	namespace System {
+	class OAS_API INonCopyable
+	{
+	protected:
+		INonCopyable(){}
+		~INonCopyable(){}
+	private:
+		INonCopyable(const INonCopyable& other);
+		const INonCopyable& operator= (const INonCopyable& other);
+	};
 
-		class OAS_API IApplication
+	class OAS_API IApplication : INonCopyable
+	{
+	public:
+		virtual ~IApplication(){}
+		virtual bool initialized() = 0;
+		virtual int run() = 0;
+	};
+
+	class OAS_API IManager
+	{
+	public:
+		virtual void VStart() = 0;
+		virtual void VStop() = 0;
+	};
+
+	class Mutex{
+		friend class Lock;
+	public:
+		Mutex()
 		{
-		public:
-			virtual ~IApplication(){}
-			virtual bool initialized() = 0;
-			virtual int run() = 0;
-		};
+			InitializeCriticalSection(&_critSection);
+		}
 
-	}
+		~Mutex()
+		{
+			DeleteCriticalSection(&_critSection);
+		}
+	private:
+		void Acquire()
+		{
+			EnterCriticalSection(&_critSection);
+		}
 
+		void Release()
+		{
+			LeaveCriticalSection(&_critSection);
+		}
+		CRITICAL_SECTION _critSection;
+	};
+
+	class Lock{
+	public:
+		// Acquire the state of the semaphore   
+		Lock(Mutex & mutex)
+			: _mutex(mutex)
+		{
+			_mutex.Acquire();
+		}
+		// Release the state of the semaphore   
+		~Lock()
+		{
+			_mutex.Release();
+		}
+	private:
+		Mutex & _mutex;
+	};
+
+
+
+	class varablelock{
+	public:
+
+		//method to get Instance of class 
+		static varablelock *getInstance(void)
+		{
+			//Note that the class is only created when this method is called first time   
+			if (!instance_)
+				instance_ = new varablelock;
+			return instance_;
+		}
+
+		//method to delete Instance of class 
+		static void deleteInstance(void)
+		{
+			if (instance_)
+				delete instance_;
+			instance_ = NULL;
+
+			//important as this can create dead reference problems 
+		}
+		Mutex mutex_;
+		varablelock() {};
+		~varablelock() {};
+
+	private:
+		//variable to store the instance of singleton 
+		static varablelock *instance_;
+		//default constructor should be private to prevent instantiation 
+		//destructor should be made private so no one can delete this accidently 
+		//We also need to prevent copy being created of the object 
+		varablelock(const varablelock&);
+	};
 }
 
 #endif
