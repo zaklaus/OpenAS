@@ -1,0 +1,8 @@
+// Test Map
+MapName MainMenu
+MapAuthor ZaKlaus
+MapVersion 1.0a
+
+CreateEntity Room$logic$0$0$0$0$0$0$city
+CreateLight 0$1$0$1$0$1$1$1$0$1$1$1
+CreateEntity MorganFreeman$0$2$0$0$0$0$0$morgan

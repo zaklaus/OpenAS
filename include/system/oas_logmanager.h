@@ -37,8 +37,8 @@
 namespace OpenAS {
 	namespace System {
 
+		OAS_API void _printf(const char* pattern, ...);
 		
-
 		class OAS_API LogManager : public Singleton <LogManager>, IManager
 		{
 			friend class Singleton < LogManager > ;

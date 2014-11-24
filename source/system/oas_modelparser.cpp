@@ -104,11 +104,15 @@ std::string OAS_API Parser::loadMTL(
 	)
 {
 	FILE * file = fopen(path, "r");
+	if (file == NULL)
+	{
+		printf(path);
+	}
 	int matLock = 1;		// SHOULD BE 0 : ( 1 FOR DEBUG )
 	int i = 0;
 	while (1){
 		char lineHeader[128];
-
+		//printf("%s", path);
 		// read the first word of the line
 		int res = fscanf(file, "%s", lineHeader);
 		if (res == EOF)
@@ -215,7 +219,7 @@ std::string OAS_API Parser::loadOBJ(
 			char t[128] = "";
 			fscanf(file, "%s", &t);
 
-			printf("%s\n", t);
+			//printf("%s\n", t);
 
 			//std::string s("a");
 

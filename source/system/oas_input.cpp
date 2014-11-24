@@ -47,6 +47,8 @@ Input::~Input() {
 
 void Input::Update(){
 	
+	SDL_GetMouseState(&mouseX, &mouseY);
+
 	for (int i = 0; i < INPUT_NUM_SCANCODES; i++) {
 		downKeys[i] = false;
 		upKeys[i] = false;

@@ -58,7 +58,8 @@ namespace OpenAS {
 			Util::Vector3D GetPosition(){ return vPosition; };
 			Util::Vector3D GetRotation(){ return vRotation; };
 			int GetKeyByName(const char* str){ return SDL_GetScancodeFromName(str); };
-			void SDLApplication::glPrint(const char *fmt, ...);
+			void SDLApplication::glPrint(int,int,const char *fmt, ...);
+			float GetDelta(){ return m_deltaTime; };
 			Input* GetInput(){ return &m_input; };
 		private:
 			SDL_Window*   m_window;
@@ -66,6 +67,8 @@ namespace OpenAS {
 			SDL_Surface*  m_surface;
 			Input  m_input;
 			bool          m_initialized;
+			float           m_deltaTime;
+			
 			bool          m_running;
 			std::string   m_title;
 			Util::Vector3D vPosition;

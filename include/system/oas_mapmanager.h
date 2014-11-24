@@ -40,7 +40,7 @@ namespace OpenAS
 		{
 		private:
 			Map* m_maps[MAX_MAPS];
-
+			int m_iCurrMap;
 		public:
 			MapManager();
 
@@ -56,6 +56,7 @@ namespace OpenAS
 
 			Map* GetMap(int id);
 			Map* GetMapByName(const char* name);
+			Map* GetCurrentMap(){ return m_maps[m_iCurrMap]; };
 		};
 	}
 }

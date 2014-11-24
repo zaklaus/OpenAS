@@ -29,17 +29,22 @@
 
 
 
-Game::Game(const std::string& title, std::string mapname)
+Game::Game(const std::string& title, std::string mapname, int width, int height,SettingsData data)
 {
+	this->m_sData = data;
 	printf("OpenAS Engine by ZaKlaus\nLoading map: %s\n",mapname.c_str());
 	this->m_gInstance = this;
 	//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	m_title = title;
+	m_cMapManager = new OpenAS::System::MapManager();
 	m_cSDLApplication = new OpenAS::System::SDLApplication(title);
 	this->ent = (unsigned int)&this->m_cEntityManager;
 	this->m_cLogManager.VStart();
 	this->m_bIsRunning = true;
 	m_firstMap = mapname;
+	this->m_iWndW = width;
+	this->m_iWndH = height;
+
 	this->m_cSDLApplication->run();
 
 	// SDL window is closed
@@ -83,7 +88,7 @@ OpenAS::System::ScriptsEx* Game::GetScriptsManager()
 
 OpenAS::System::MapManager* Game::GetMapManager()
 { 
-	return &this->m_cMapManager; 
+	return this->m_cMapManager; 
 };
 
 // Test code

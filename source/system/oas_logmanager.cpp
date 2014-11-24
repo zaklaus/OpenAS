@@ -26,6 +26,7 @@
 
 #include <system\oas_logmanager.h>
 #include <system\oas_defaults.h>
+#include <system\oas_game.h>
 
 OpenAS::System::LogManager::LogManager(){ bDebugCmd = DEFAULT_DEBUG_FLAG;  }
 OpenAS::System::LogManager::~LogManager(){ VStop(); }
@@ -33,6 +34,20 @@ OpenAS::System::LogManager::~LogManager(){ VStop(); }
 using namespace OpenAS::System;
 
 LogManager& g_LogManager = LogManager::instance();
+
+
+OAS_API void OpenAS::System::_printf(const char* pattern, ...)
+{
+	char str[512];
+	va_list va;
+	va_start(va, pattern);
+	vsprintf(str, pattern, va);
+	va_end(va);
+
+	Game* g = Game::GetGame();
+
+	g->GetLogManager()->AddLog("Info", str, time(NULL), g->GetLogManager()->GetDebugFlag(), LOG_FILE);
+}
 
 void LogManager::VStart()
 {

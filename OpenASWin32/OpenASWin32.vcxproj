@@ -176,6 +176,7 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
     <ClInclude Include="..\include\sdks\SDL\SDL_thread.h" />
     <ClInclude Include="..\include\sdks\SDL\SDL_timer.h" />
     <ClInclude Include="..\include\sdks\SDL\SDL_touch.h" />
+    <ClInclude Include="..\include\sdks\SDL\SDL_ttf.h" />
     <ClInclude Include="..\include\sdks\SDL\SDL_types.h" />
     <ClInclude Include="..\include\sdks\SDL\SDL_version.h" />
     <ClInclude Include="..\include\sdks\SDL\SDL_video.h" />
@@ -195,6 +196,8 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
     <ClInclude Include="..\include\system\oas_scriptsex.h" />
     <ClInclude Include="..\include\system\oas_sdl2application.h" />
     <ClInclude Include="..\include\system\oas_singleton.h" />
+    <ClInclude Include="..\include\util\oas_bitstream.h" />
+    <ClInclude Include="..\include\util\oas_generic.h" />
     <ClInclude Include="..\include\util\oas_ioutil.h" />
     <ClInclude Include="..\include\util\oas_math.h" />
     <ClInclude Include="..\include\util\oas_stringutil.h" />
@@ -257,6 +260,7 @@ xcopy /s /y "$(SolutionDir)\source" "C:\GitHub\OpenAS\source\"
     <ClCompile Include="..\source\system\oas_scriptex.cpp" />
     <ClCompile Include="..\source\system\oas_scripts.cpp" />
     <ClCompile Include="..\source\system\oas_sdl2application.cpp" />
+    <ClCompile Include="..\source\util\oas_bitstream.cpp" />
     <ClCompile Include="..\source\util\oas_math.cpp" />
     <ClCompile Include="..\source\util\sq_funcdef.cpp" />
     <ClCompile Include="..\source\util\sq_functions.cpp" />

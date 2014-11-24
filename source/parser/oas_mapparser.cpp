@@ -26,9 +26,12 @@ SOFTWARE.
 
 #include <parser\oas_mapparser.h>
 #include <system\oas_game.h>
+#include <util\oas_generic.h>
+#include <util\oas_math.h>
 
 int OpenAS::Parser::CreateMapEntity(std::string tmp)
 {
+	_printf("%s", "Creating map entity...");
 	//printf("%s", tmp.c_str());
 	char _szEntityName[128] = ""; char _szScriptName[128] = ""; float posx, posy, posz, rotx, roty, rotz; char _szModelName[128] = "";
 	//sscanf(out,"%s %s %f %f %f %f %f %f %s",_szEntityName,_szScriptName,&posx,&posy,&posz,&rotx,&roty,&rotz,_szModelName);
@@ -94,3 +97,83 @@ int OpenAS::Parser::CreateMapEntity(std::string tmp)
 	return g->GetEntityManager()->CreateEntity((const char*)_szEntityName, (const char*)_szScriptName, pos, rot, (const char*)_szModelName);
 	//return -1;
 }
+
+int  OpenAS::Parser::CreateLight(int mapid, std::string tmp)
+  {
+	  
+	  float posx, posy, posz, ambx,amby,ambz,diffx,diffy,diffz,specx,specy,specz;
+	  
+	  char* pch;
+	  char str[128] = "";
+	  sprintf(str, "%s", tmp.c_str());
+
+	  pch = strtok(str, "$");
+	  posx = (float)atof(pch);
+	  int i = 0;
+
+	  while (pch != NULL)
+	  {
+		  pch = strtok(NULL, "$");
+		  i++;
+
+		  switch (i)
+		  {
+		  case 1:
+			  posy = (float)atof(pch);
+			  break;
+		  case 2:
+			  posz = (float)atof(pch);
+			  break;
+		  case 3:
+			  ambx = (float)atof(pch);
+			  break;
+		  case 4:
+			  amby = (float)atof(pch);
+			  break;
+		  case 5:
+			  ambz = (float)atof(pch);
+			  break;
+		  case 6:
+			  diffx = (float)atof(pch);
+			  break;
+		  case 7:
+			  diffy = (float)atof(pch);
+			  break;
+		  case 8:
+			  diffz = (float)atof(pch);
+			  break;
+		  case 9:
+			  specx = (float)atof(pch);
+			  break;
+		  case 10:
+			  specy = (float)atof(pch);
+			  break;
+		  case 11:
+			  specz = (float)atof(pch);
+			  break;
+		  }
+	  }
+
+	  delete pch;
+	  //printf(_szScriptName);
+	  OpenAS::Util::Vector3D pos(posx, posy, posz);
+	  OpenAS::Util::Vector3D amb(ambx,amby,ambz);
+	  OpenAS::Util::Vector3D diff(diffx, diffy, diffz);
+	  OpenAS::Util::Vector3D spec(specx, specy, specz);
+	  //printf("%f,%f,$f",pos.x,pos.y,pos.z);
+	  //printf("%s := %f\n", _szEntityName, posx);
+
+	  //delete _szEntityName, _szModelName, _szScriptName;
+
+	  //printf("%s", g->GetMapManager()->GetMap(0)->GetMapAuthor());
+	  Game* ga = Game::GetGame();
+
+	  OpenAS::Util::LightData l;
+	  l.pos = pos;
+	  l.amb = amb;
+	  l.diff = diff;
+	  l.spec = spec;
+
+	  return ga->GetMapManager()->GetMap(mapid)->AddLight(l);
+	  //return -1;
+  }

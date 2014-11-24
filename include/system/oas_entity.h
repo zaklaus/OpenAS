@@ -65,7 +65,8 @@ namespace OpenAS
 			bool HasModel(){ return hasModel; };
 			void SetPosition(float x, float y, float z){ vPosition.x = x; vPosition.y = y; vPosition.z = z; };
 			void SetRotation(float x, float y, float z){ vRotation.x = x; vRotation.y = y; vRotation.z = z; };
-			Model* GetModel(){ return &model; };
+			Model* GetModel(int i){ return &model[i]; };
+			std::vector<Model>* GetModels(){ return &model; };
 		private:
 
 			// Internal variables
@@ -73,7 +74,7 @@ namespace OpenAS
 
 			char szEntityName[256], szModelName[256], szScriptName[256];
 			OpenAS::Util::Vector3D vPosition, vRotation;
-			Model model;
+			std::vector<Model> model;
 			int ID;
 			int ScriptID;
 			bool hasModel;

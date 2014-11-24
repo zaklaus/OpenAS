@@ -7,3 +7,23 @@ Date: Mon Nov 03 18:17:27 2014
 ======== OpenAS Shutdown ========
 Date: Mon Nov 03 18:17:29 2014
 =================================
+======== OpenAS Startup ========
+Date: Sun Nov 09 21:40:20 2014
+================================
+======== OpenAS Shutdown ========
+Date: Sun Nov 09 21:40:22 2014
+=================================
+======== OpenAS Startup ========
+Date: Sun Nov 09 21:40:30 2014
+================================
+======== OpenAS Shutdown ========
+Date: Sun Nov 09 21:40:31 2014
+=================================
+======== OpenAS Startup ========
+Date: Wed Nov 12 18:01:50 2014
+================================
+Log: [Wed Nov 12 18:01:50 2014] Info: First map: menu.omap
+Log: [Wed Nov 12 18:01:50 2014] Info: Loading map: maps\menu.omap
+======== OpenAS Shutdown ========
+Date: Wed Nov 12 18:01:52 2014
+=================================

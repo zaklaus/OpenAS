@@ -44,6 +44,8 @@ namespace OpenAS
 			bool   GetKey(const int);
 			bool   GetKeyDown(const int);
 			bool   GetKeyUp(const int);
+			int    GetMouseX(){ return mouseX; };
+			int    GetMouseY(){ return mouseY; };
 			static Input* GetInputEx(){ return m_gInst; };
 		public:
 			bool    textMode;
@@ -53,6 +55,7 @@ namespace OpenAS
 			bool       currentKeys[INPUT_NUM_SCANCODES];
 			bool       downKeys[INPUT_NUM_SCANCODES];
 			bool       upKeys[INPUT_NUM_SCANCODES];
+			int		   mouseX, mouseY;
 			SDL_Event  event;
 			static Input* m_gInst;
 		};

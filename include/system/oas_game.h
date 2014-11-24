@@ -36,6 +36,7 @@
 #define new DEBUG_NEW
 #endif
 
+#include <util\oas_generic.h>
 #include <system\oas_interfaces.h>
 #include <system\oas_singleton.h>
 #include <system\oas_defaults.h>
@@ -53,10 +54,11 @@ private:
 	OpenAS::System::SDLApplication* m_cSDLApplication;
 	OpenAS::System::EntityManager m_cEntityManager;
 	OpenAS::System::ScriptsEx m_cScripts;
-	OpenAS::System::MapManager m_cMapManager;
+	OpenAS::System::MapManager* m_cMapManager;
+	OpenAS::Util::SettingsData m_sData;
 public:
 	static Game* GetGame(){ return m_gInstance; };
-	Game(const std::string& title,std::string);
+	Game(const std::string& title,std::string, int,int,SettingsData);
 	~Game();
 
 	std::string m_firstMap;
@@ -70,6 +72,12 @@ public:
 	//OpenAS::System::EntityManager* GetCachedEntityManager(){ return (OpenAS::System::EntityManager*)ent; };
 	OpenAS::System::ScriptsEx* GetScriptsManager();
 	OpenAS::System::MapManager* GetMapManager();
+	OpenAS::Util::SettingsData* GetSettings(){ return &m_sData; };
+
+	int GetWindowWidth(){ return m_iWndW; };
+	int GetWindowHeight(){ return m_iWndH; };
+	int GetMaxFPS(){ return m_maxFPS; };
+	void SetMaxFPS(int i){ m_maxFPS = i; };
 	bool IsRunning(){ return m_bIsRunning; };
 	// Test methods
 	//
@@ -78,6 +86,8 @@ public:
 private:
 	std::string m_title;
 	unsigned int ent;
+	int m_iWndW, m_iWndH;
+	int m_maxFPS;
 	static Game* m_gInstance;
 	bool m_bIsRunning;
 };

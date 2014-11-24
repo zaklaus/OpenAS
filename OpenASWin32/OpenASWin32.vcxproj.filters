@@ -40,6 +40,9 @@
     <Filter Include="Source Files\parser">
       <UniqueIdentifier>{ccd9327c-f3cc-4bef-9208-239cd987fdf8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\sdks">
+      <UniqueIdentifier>{11e97741-59bf-4c45-b34e-21c080949663}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\sdks\SDL\begin_code.h">
@@ -366,6 +369,15 @@
     <ClInclude Include="..\include\system\oas_input.h">
       <Filter>Header Files\system</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\util\oas_generic.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\sdks\SDL\SDL_ttf.h">
+      <Filter>Header Files\sdks\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\util\oas_bitstream.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\system\oas_game.cpp">
@@ -481,6 +493,9 @@
     </ClCompile>
     <ClCompile Include="..\source\system\oas_input.cpp">
       <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\util\oas_bitstream.cpp">
+      <Filter>Source Files\util</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

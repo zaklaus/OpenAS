@@ -28,7 +28,7 @@
 #include <system\oas_game.h>
 
 #pragma once
-	extern Game* g;
+extern Game* g;
 
 SQInteger sq_testf(SQVM *squirrelVM)
 {
@@ -66,8 +66,8 @@ SQInteger sq_entityRotate(SQVM *v)
 	SQInteger ID;
 	SQFloat x, y, z;
 
-	sq_getinteger(v, -1, &ID);
-	sq_getfloat(v, -2, &x); sq_getfloat(v, -3, &y); sq_getfloat(v, -4, &z);
+	sq_getinteger(v, -4, &ID);
+	sq_getfloat(v, -3, &x); sq_getfloat(v, -2, &y); sq_getfloat(v, -1, &z);
 
 	Entity* e = g->GetEntityManager()->GetEntity(ID);
 
@@ -88,8 +88,8 @@ SQInteger sq_entityTranslate(SQVM *v)
 	SQInteger ID;
 	SQFloat x, y, z;
 
-	sq_getinteger(v, -1, &ID);
-	sq_getfloat(v, -2, &x); sq_getfloat(v, -3, &y); sq_getfloat(v, -4, &z);
+	sq_getinteger(v, -4, &ID);
+	sq_getfloat(v, -3, &x); sq_getfloat(v, -2, &y); sq_getfloat(v, -1, &z);
 
 	Entity* e = g->GetEntityManager()->GetEntity(ID);
 
@@ -100,6 +100,56 @@ SQInteger sq_entityTranslate(SQVM *v)
 		return 1;
 	}
 	sq_pushbool(v, false);
+	return 1;
+}
+
+SQInteger sq_entityCreate(SQVM *v)
+{
+	Game* g = Game::GetGame();
+
+	SQFloat posx, posy, posz, rotx, roty, rotz;
+	const SQChar* ename; const SQChar* sname; const SQChar* mname;
+
+	sq_getstring(v, -9, &ename); sq_getstring(v, -8, &sname); sq_getfloat(v, -7, &posx); sq_getfloat(v, -6, &posy); sq_getfloat(v, -5, &posz); sq_getfloat(v, -4, &rotx); sq_getfloat(v, -3, &roty); sq_getfloat(v, -2, &rotz); sq_getstring(v, -1, &mname);
+
+	sq_pushinteger(v, g->GetEntityManager()->CreateEntity(ename, sname, OpenAS::Util::Vector3D(posx, posy, posz), OpenAS::Util::Vector3D(rotx, roty, rotz), mname));
+
+	return 1;
+}
+SQInteger sq_entityDestroy(SQVM *v)
+{
+	Game* g = Game::GetGame();
+
+	SQInteger ID;
+	sq_getinteger(v, -1, &ID);
+
+	if (g->GetEntityManager()->GetEntity(ID) != NULL)
+	{
+		g->GetEntityManager()->DestroyEntity(ID);
+		sq_pushbool(v, true);
+	}
+	else sq_pushbool(v, false);
+
+	return 1;
+}
+
+SQInteger sq_entityGetByName(SQVM *v)
+{
+	Game *g = Game::GetGame();
+
+	const SQChar* name;
+	sq_getstring(v, -1, &name);
+
+	Entity* ID = g->GetEntityManager()->GetEntityByName(name);
+
+	if (ID != NULL)
+	{
+		sq_pushinteger(v, ID->GetID());
+	}
+	else
+	{
+		sq_pushinteger(v, -1);
+	}
 	return 1;
 }
 
@@ -179,6 +229,22 @@ SQInteger sq_inputGetKeyUp(SQVM *v)
 	return 1;
 }
 
+SQInteger sq_inputGetMouseX(SQVM *v)
+{
+	Game* g = Game::GetGame();
+	SQInteger x = g->GetSDLApplication()->GetInput()->GetMouseX();
+	sq_pushinteger(v, x);
+	return 1;
+}
+
+SQInteger sq_inputGetMouseY(SQVM *v)
+{
+	Game* g = Game::GetGame();
+	SQInteger Y = g->GetSDLApplication()->GetInput()->GetMouseY();
+	sq_pushinteger(v, Y);
+	return 1;
+}
+
 SQInteger sq_inputGetKeyDown(SQVM *v)
 {
 	Game* g = Game::GetGame();
@@ -215,7 +281,7 @@ SQInteger sq_camSetRotation(SQVM *v)
 	Game* g = Game::GetGame();
 	SQFloat x, y, z;
 
-	sq_getfloat(v, -1, &x); sq_getfloat(v, -2, &y); sq_getfloat(v, -3, &z);
+	sq_getfloat(v, -3, &x); sq_getfloat(v, -2, &y); sq_getfloat(v, -1, &z);
 
 	g->GetSDLApplication()->SetRotation(x, y, z);
 
@@ -245,5 +311,50 @@ SQInteger sq_drawRect(SQVM *v)
 
 	//SDL_FillRect(eg->GetSDLApplication()->GetSurface(), &rect, SDL_MapRGBA(eg->GetSDLApplication()->GetSurface()->format, r, _g, b, a));
 	//printf("\n%d %d %d %d : %d %d %d\n",x,y,w,h,r,_g,b);
+	return 1;
+}
+
+SQInteger sq_lightEnable(SQVM *v)
+{
+	Game* ga = Game::GetGame();
+
+	SQInteger ID;
+	sq_getinteger(v, -1, &ID);
+
+	if (ga->GetMapManager()->GetCurrentMap()->GetLightState(ID) == false)
+	{
+		sq_pushinteger(v,g->GetMapManager()->GetCurrentMap()->EnableLight(ID));
+		return 1;
+	}
+
+	sq_pushinteger(v, -1);
+
+	return 1;
+}
+
+SQInteger sq_lightDisable(SQVM *v)
+{
+	Game* g = Game::GetGame();
+
+	SQInteger ID;
+	sq_getinteger(v, -1, &ID);
+
+	if (g->GetMapManager()->GetCurrentMap()->GetLightState(ID) == true)
+	{
+		sq_pushinteger(v, g->GetMapManager()->GetCurrentMap()->DisableLight(ID));
+		return 1;
+	}
+
+	sq_pushinteger(v, 0);
+
+	return 1;
+}
+
+SQInteger sq_timeGetDelta(SQVM *v)
+{
+	Game* g = Game::GetGame();
+
+	sq_pushfloat(v, g->GetSDLApplication()->GetDelta());
+
 	return 1;
 }

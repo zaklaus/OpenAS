@@ -40,6 +40,7 @@ MapManager::MapManager()
 int MapManager::InstallMap(const char* filename)
 {
 	int iSlot = -1;
+	Game* ga = Game::GetGame();
 
 	for (int i = 0; i < MAX_MAPS; i++) {
 		if (m_maps[i] == NULL) {
@@ -57,7 +58,10 @@ int MapManager::InstallMap(const char* filename)
 
 	if (m_maps[iSlot] == NULL)
 	{
-		m_maps[iSlot] = new OpenAS::System::Map(iSlot, filename);
+		char fname[128]="";
+		sprintf(fname, "%s%s", ga->GetSettings()->maps.c_str(), filename);
+		_printf("Loading map: %s", fname);
+		m_maps[iSlot] = new OpenAS::System::Map(iSlot, fname);
 		return iSlot;
 	}
 	return -1;
@@ -71,7 +75,10 @@ void MapManager::RemoveMap(int id)
 void MapManager::LoadMap(int id)
 {
 	if (m_maps[id] != NULL)
+	{
+		m_iCurrMap = id;
 		m_maps[id]->LoadThisMap();
+	}
 };
 
 void MapManager::UnloadMap(int id)
@@ -90,6 +97,7 @@ void MapManager::SwitchMap(int id)
 				UnloadMap(i);
 		}
 	}
+	m_iCurrMap = id;
 	m_maps[id]->LoadThisMap();
 };
 

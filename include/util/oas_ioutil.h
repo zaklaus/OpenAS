@@ -30,11 +30,26 @@
 #include<iostream>
 #include<fstream>
 #include<sstream>
+#include<vector>
+#include<Windows.h>
 
 namespace OpenAS {
 
 	namespace Util {
-
+		inline OAS_API void getFilesList(std::string filePath, std::string extension, std::vector<std::string> & returnFileName)
+		{
+			WIN32_FIND_DATA fileInfo;
+			HANDLE hFind;
+			std::string  fullPath = filePath + extension;
+			hFind = FindFirstFile(fullPath.c_str(), &fileInfo);
+			if (hFind == INVALID_HANDLE_VALUE){ return; }
+			else {
+				returnFileName.push_back(filePath + fileInfo.cFileName);
+				while (FindNextFile(hFind, &fileInfo) != 0){
+					returnFileName.push_back(filePath + fileInfo.cFileName);
+				}
+			}
+		}
 		inline OAS_API int WriteFile(std::string filename, std::string msg, int flags=0)
 		{
 			std::ofstream file;

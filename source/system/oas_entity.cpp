@@ -31,28 +31,49 @@ extern Game* g;
 
 OpenAS::System::Entity::Entity(int _id, const char* _szEntityName, const char* _szScriptName, OpenAS::Util::Vector3D _vPosition, OpenAS::Util::Vector3D _vRotation, const char* _szModelName)
 {
+	Game* ga = Game::GetGame();
+
 	// Initialize internal variables
 	//
 	sprintf(this->szEntityName,"%s",_szEntityName);
-	sprintf(this->szScriptName,"%s",_szScriptName);
-	sprintf(this->szModelName,"%s",_szModelName);
+	
+	sprintf(this->szScriptName,"%s%s",ga->GetSettings()->scripts.c_str(),_szScriptName);
+	sprintf(this->szModelName,"%s%s",ga->GetSettings()->models.c_str(),_szModelName);
 	this->vPosition = _vPosition;
 	this->vRotation = _vRotation;
 	this->ID = _id;
 	this->hasModel = false;
 	this->scr = NULL;
 
+	_printf("%s",szEntityName);
+
 	if (_szModelName[0] != '0')
 	{
-		this->model.LoadModel(_szModelName);
+		_printf("Loading models: %s\n", _szModelName);
+		std::vector<std::string> filesPaths;
+		char path[128]; sprintf(path, "%s%s\\\\", ga->GetSettings()->models.c_str(), _szModelName);
+		getFilesList(path, "*.obj*", filesPaths);
+		for (int i = 0; i < filesPaths.size();i++)
+		{
+			_printf("Loading model: %s\n", filesPaths[i].c_str());
+			Model* m = new Model();
+			char zpath[128]; sprintf(zpath, "%s\\\\", _szModelName);
+			m->LoadModel(zpath,filesPaths[i].c_str());
+			this->model.push_back(*m);
+
+			delete m;
+			m = NULL;
+		}
+
+		//this->model.LoadModel(_szModelName);
 		this->hasModel = true;
 	}
 
 	if(_szScriptName[0] != '0')
 	{
 		char tmp[256] = "";
-		sprintf(tmp,"%s.nut",_szScriptName);
-		//printf(tmp);
+		sprintf(tmp,"%s.nut",this->szScriptName);
+		_printf("Loading script: %s\n",tmp);
 		//int sid = g->GetScriptsManager()->LoadScript(_id,tmp);
 
 		//this->SetScriptID(sid);

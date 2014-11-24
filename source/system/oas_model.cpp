@@ -27,6 +27,8 @@ SOFTWARE.
 #include <system\oas_model.h>
 #include <system\oas_sdl2application.h>
 #include <parser\oas_modelparser.h>
+#include <gl\GL.h>
+#include <system\oas_game.h>
 
 using namespace OpenAS::System;
 
@@ -37,8 +39,11 @@ Material::Material(const std::string& texturePath)
 	this->textureID = Parser::LoadTexBMP(texturePath.c_str());
 }
 
-void Model::LoadModel(const char* path)
+void Model::LoadModel(const char* dir, const char* path)
 {
+
+	Game* g = Game::GetGame();
+
 	std::string mtlpath;
 	//mtl.push_back(MaterialName("test"));
 	mtlpath = Parser::loadOBJ(path, this->vertices, this->uvs, this->normals, this->mtlPosX);
@@ -48,16 +53,35 @@ void Model::LoadModel(const char* path)
 	for (int i = 0; i < this->mtlPosX.size(); i++)
 	{
 		std::string tmp_texpath;
-		tmp_texpath = Parser::loadMTL(mtlpath.c_str(),i);
+
+		char matpath[128]="", texpath[128]="";
+
+		sprintf(matpath,"%s\\%s%s", g->GetSettings()->models.c_str(),dir, mtlpath.c_str());
+
+		tmp_texpath = Parser::loadMTL(matpath,i);
+
+		sprintf(texpath, "%s\\%s%s", g->GetSettings()->models.c_str(), dir, tmp_texpath.c_str());
 
 		//printf("%s", tmp_texpath.c_str());
 
-		Material* m = new Material(tmp_texpath);
+		Material* m = new Material(texpath);
 
 		this->materials.push_back(*m);
-
 		delete m;
 		m = NULL;
 	}
+	
+	this->listID = glGenLists(1);
+	glNewList(this->listID, GL_COMPILE);
+	glBegin(GL_TRIANGLES);
+	for (int j = 0; j < this->vertices.size(); j++){
+		//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		
+		glNormal3f(this->normals.at(j).x, this->normals.at(j).y, this->normals.at(j).z);
+		glTexCoord2f(this->uvs.at(j).x, this->uvs.at(j).y);
+		glVertex3f(this->vertices.at(j).x, this->vertices.at(j).y, this->vertices.at(j).z);
+	}
+	glEnd();
+	glEndList();
 	
 }

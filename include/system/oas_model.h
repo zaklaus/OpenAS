@@ -48,9 +48,12 @@ namespace OpenAS
 			~Material(){};
 
 			int GetTextureID(){ return textureID; };
+			std::vector < Util::Vector3D >vertices;
+			int listID;
 
 		private:
 			std::string texture;
+			
 			int textureID;
 		};
 
@@ -67,11 +70,11 @@ namespace OpenAS
 			std::vector < std::string > mtlX;
 			std::vector < Material > materials;
 
-			int TexID, VerID, NorID;
+			int TexID, VerID, NorID, listID;
 			//Util::Vector3D pos, rot;
 
 //			Model();
-			void LoadModel(const char* path);
+			void LoadModel(const char* dir, const char* path);
 		};
 	}
 }

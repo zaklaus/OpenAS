@@ -106,7 +106,7 @@ namespace OpenAS
 			return;// (char*)&out;
 		}
 
-		inline OAS_API void GetMapSetting(const char* file, const char* item, char* out)
+		inline OAS_API void GetMapSetting(const char* file, const char* item, char* out, const char* default)
 		{
 
 			std::ifstream fp(file);
@@ -127,10 +127,12 @@ namespace OpenAS
 					}
 				}
 			}
-			return; // (char*)&out;
+			sprintf(out, "%s", default);
+			return;
 		}
 
 		OAS_API int CreateMapEntity(std::string tmp);
+		OAS_API int CreateLight(int,std::string tmp);
 	}
 }
 
